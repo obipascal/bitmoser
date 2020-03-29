@@ -1,0 +1,111 @@
+CRITICAL - 2020-03-19 01:38:18 --> Class 'Libraries\Assistant\BS_Assist' not found
+#0 C:\xampp-newer\htdocs\bitmoser\vendor\codeigniter4\framework\system\CodeIgniter.php(883): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+#1 C:\xampp-newer\htdocs\bitmoser\vendor\codeigniter4\framework\system\CodeIgniter.php(393): CodeIgniter\CodeIgniter->createController()
+#2 C:\xampp-newer\htdocs\bitmoser\vendor\codeigniter4\framework\system\CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp-newer\htdocs\bitmoser\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 C:\xampp-newer\htdocs\bitmoser\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(34): require_once('C:\\xampp-newer\\...')
+#5 {main}
+CRITICAL - 2020-03-19 01:39:46 --> Class 'Libraries\Assistant\BS_Assist' not found
+#0 C:\xampp-newer\htdocs\bitmoser\vendor\codeigniter4\framework\system\CodeIgniter.php(883): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+#1 C:\xampp-newer\htdocs\bitmoser\vendor\codeigniter4\framework\system\CodeIgniter.php(393): CodeIgniter\CodeIgniter->createController()
+#2 C:\xampp-newer\htdocs\bitmoser\vendor\codeigniter4\framework\system\CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp-newer\htdocs\bitmoser\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 C:\xampp-newer\htdocs\bitmoser\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(34): require_once('C:\\xampp-newer\\...')
+#5 {main}
+CRITICAL - 2020-03-19 01:43:10 --> Class 'Libraries\Assistant\BS_Assist' not found
+#0 C:\xampp-newer\htdocs\bitmoser\vendor\codeigniter4\framework\system\CodeIgniter.php(883): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+#1 C:\xampp-newer\htdocs\bitmoser\vendor\codeigniter4\framework\system\CodeIgniter.php(393): CodeIgniter\CodeIgniter->createController()
+#2 C:\xampp-newer\htdocs\bitmoser\vendor\codeigniter4\framework\system\CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp-newer\htdocs\bitmoser\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 C:\xampp-newer\htdocs\bitmoser\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(34): require_once('C:\\xampp-newer\\...')
+#5 {main}
+CRITICAL - 2020-03-19 02:01:11 --> Class 'Libraries\Assistant\BS_Assist' not found
+#0 C:\xampp-newer\htdocs\bitmoser\app\Controllers\BaseController.php(51): Config\Services::bsassist()
+#1 C:\xampp-newer\htdocs\bitmoser\vendor\codeigniter4\framework\system\CodeIgniter.php(883): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+#2 C:\xampp-newer\htdocs\bitmoser\vendor\codeigniter4\framework\system\CodeIgniter.php(393): CodeIgniter\CodeIgniter->createController()
+#3 C:\xampp-newer\htdocs\bitmoser\vendor\codeigniter4\framework\system\CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp-newer\htdocs\bitmoser\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp-newer\htdocs\bitmoser\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(34): require_once('C:\\xampp-newer\\...')
+#6 {main}
+CRITICAL - 2020-03-19 02:02:46 --> Class 'Assistant\BS_Assist' not found
+#0 C:\xampp-newer\htdocs\bitmoser\app\Controllers\BaseController.php(51): Config\Services::bsassist()
+#1 C:\xampp-newer\htdocs\bitmoser\vendor\codeigniter4\framework\system\CodeIgniter.php(883): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+#2 C:\xampp-newer\htdocs\bitmoser\vendor\codeigniter4\framework\system\CodeIgniter.php(393): CodeIgniter\CodeIgniter->createController()
+#3 C:\xampp-newer\htdocs\bitmoser\vendor\codeigniter4\framework\system\CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp-newer\htdocs\bitmoser\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp-newer\htdocs\bitmoser\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(34): require_once('C:\\xampp-newer\\...')
+#6 {main}
+CRITICAL - 2020-03-19 02:08:51 --> Class 'Libraries\Assistant\BS_Assist' not found
+#0 C:\xampp-newer\htdocs\bitmoser\app\Controllers\BaseController.php(51): Config\Services::bsassist()
+#1 C:\xampp-newer\htdocs\bitmoser\vendor\codeigniter4\framework\system\CodeIgniter.php(883): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+#2 C:\xampp-newer\htdocs\bitmoser\vendor\codeigniter4\framework\system\CodeIgniter.php(393): CodeIgniter\CodeIgniter->createController()
+#3 C:\xampp-newer\htdocs\bitmoser\vendor\codeigniter4\framework\system\CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp-newer\htdocs\bitmoser\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp-newer\htdocs\bitmoser\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(34): require_once('C:\\xampp-newer\\...')
+#6 {main}
+CRITICAL - 2020-03-19 02:17:37 --> Class 'Libraries\Assistant\BS_Assist' not found
+#0 C:\xampp-newer\htdocs\bitmoser\app\Controllers\BaseController.php(51): Config\Services::bsassist()
+#1 C:\xampp-newer\htdocs\bitmoser\vendor\codeigniter4\framework\system\CodeIgniter.php(883): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+#2 C:\xampp-newer\htdocs\bitmoser\vendor\codeigniter4\framework\system\CodeIgniter.php(393): CodeIgniter\CodeIgniter->createController()
+#3 C:\xampp-newer\htdocs\bitmoser\vendor\codeigniter4\framework\system\CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp-newer\htdocs\bitmoser\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp-newer\htdocs\bitmoser\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(34): require_once('C:\\xampp-newer\\...')
+#6 {main}
+CRITICAL - 2020-03-19 02:18:59 --> Class 'Libraries\Assistant\BS_Assist' not found
+#0 C:\xampp-newer\htdocs\bitmoser\app\Controllers\BaseController.php(51): Config\Services::bsassist()
+#1 C:\xampp-newer\htdocs\bitmoser\vendor\codeigniter4\framework\system\CodeIgniter.php(883): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+#2 C:\xampp-newer\htdocs\bitmoser\vendor\codeigniter4\framework\system\CodeIgniter.php(393): CodeIgniter\CodeIgniter->createController()
+#3 C:\xampp-newer\htdocs\bitmoser\vendor\codeigniter4\framework\system\CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp-newer\htdocs\bitmoser\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp-newer\htdocs\bitmoser\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(34): require_once('C:\\xampp-newer\\...')
+#6 {main}
+CRITICAL - 2020-03-19 03:00:35 --> Undefined property: CodeIgniter\View\View::$bs_session
+#0 C:\xampp-newer\htdocs\bitmoser\app\Views\includes\main\navbar.php(40): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp-newer\\...', 40, Array)
+#1 C:\xampp-newer\htdocs\bitmoser\vendor\codeigniter4\framework\system\View\View.php(236): include('C:\\xampp-newer\\...')
+#2 C:\xampp-newer\htdocs\bitmoser\vendor\codeigniter4\framework\system\Common.php(1071): CodeIgniter\View\View->render('includes/main/n...', Array, true)
+#3 C:\xampp-newer\htdocs\bitmoser\app\Controllers\Home.php(15): view('includes/main/n...', Array)
+#4 C:\xampp-newer\htdocs\bitmoser\vendor\codeigniter4\framework\system\CodeIgniter.php(910): App\Controllers\Home->index()
+#5 C:\xampp-newer\htdocs\bitmoser\vendor\codeigniter4\framework\system\CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#6 C:\xampp-newer\htdocs\bitmoser\vendor\codeigniter4\framework\system\CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp-newer\htdocs\bitmoser\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp-newer\htdocs\bitmoser\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(34): require_once('C:\\xampp-newer\\...')
+#9 {main}
+CRITICAL - 2020-03-19 03:25:17 --> Undefined property: App\Controllers\Home::$PA
+#0 C:\xampp-newer\htdocs\bitmoser\app\Controllers\Home.php(12): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp-newer\\...', 12, Array)
+#1 C:\xampp-newer\htdocs\bitmoser\vendor\codeigniter4\framework\system\CodeIgniter.php(910): App\Controllers\Home->index()
+#2 C:\xampp-newer\htdocs\bitmoser\vendor\codeigniter4\framework\system\CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#3 C:\xampp-newer\htdocs\bitmoser\vendor\codeigniter4\framework\system\CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp-newer\htdocs\bitmoser\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-03-19 03:27:48 --> Cannot call constructor
+#0 C:\xampp-newer\htdocs\bitmoser\vendor\codeigniter4\framework\system\CodeIgniter.php(882): App\Controllers\Home->__construct()
+#1 C:\xampp-newer\htdocs\bitmoser\vendor\codeigniter4\framework\system\CodeIgniter.php(393): CodeIgniter\CodeIgniter->createController()
+#2 C:\xampp-newer\htdocs\bitmoser\vendor\codeigniter4\framework\system\CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp-newer\htdocs\bitmoser\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-03-19 04:36:47 --> preg_match(): Unknown modifier '+'
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'preg_match(): U...', 'C:\\xampp-newer\\...', 32, Array)
+#1 C:\xampp-newer\htdocs\bitmoser\app\Controllers\Request\ServicesList.php(32): preg_match('[A-Za-z]+^[0-9....', 'A')
+#2 C:\xampp-newer\htdocs\bitmoser\vendor\codeigniter4\framework\system\CodeIgniter.php(910): App\Controllers\Request\ServicesList->getServiceByLabel('A')
+#3 C:\xampp-newer\htdocs\bitmoser\vendor\codeigniter4\framework\system\CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Request\ServicesList))
+#4 C:\xampp-newer\htdocs\bitmoser\vendor\codeigniter4\framework\system\CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp-newer\htdocs\bitmoser\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2020-03-19 04:39:58 --> Invalid file: <h1>Nice oke</h1>.php
+#0 C:\xampp-newer\htdocs\bitmoser\vendor\codeigniter4\framework\system\View\View.php(224): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('<h1>Nice oke</h...')
+#1 C:\xampp-newer\htdocs\bitmoser\vendor\codeigniter4\framework\system\Common.php(1071): CodeIgniter\View\View->render('<h1>Nice oke</h...', Array, true)
+#2 C:\xampp-newer\htdocs\bitmoser\app\Controllers\Request\ServicesList.php(34): view('<h1>Nice oke</h...')
+#3 C:\xampp-newer\htdocs\bitmoser\vendor\codeigniter4\framework\system\CodeIgniter.php(910): App\Controllers\Request\ServicesList->getServiceByLabel('A')
+#4 C:\xampp-newer\htdocs\bitmoser\vendor\codeigniter4\framework\system\CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Request\ServicesList))
+#5 C:\xampp-newer\htdocs\bitmoser\vendor\codeigniter4\framework\system\CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp-newer\htdocs\bitmoser\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2020-03-19 04:43:01 --> preg_match(): Compilation failed: quantifier does not follow a repeatable item at offset 30
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'preg_match(): C...', 'C:\\xampp-newer\\...', 425, Array)
+#1 C:\xampp-newer\htdocs\bitmoser\vendor\codeigniter4\framework\system\Router\Router.php(425): preg_match('#^services/labe...', 'services/labels...', Array)
+#2 C:\xampp-newer\htdocs\bitmoser\vendor\codeigniter4\framework\system\Router\Router.php(174): CodeIgniter\Router\Router->checkRoutes('services/labels...')
+#3 C:\xampp-newer\htdocs\bitmoser\vendor\codeigniter4\framework\system\CodeIgniter.php(785): CodeIgniter\Router\Router->handle('services/labels...')
+#4 C:\xampp-newer\htdocs\bitmoser\vendor\codeigniter4\framework\system\CodeIgniter.php(358): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#5 C:\xampp-newer\htdocs\bitmoser\vendor\codeigniter4\framework\system\CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp-newer\htdocs\bitmoser\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#7 {main}

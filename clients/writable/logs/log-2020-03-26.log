@@ -1,0 +1,20 @@
+CRITICAL - 2020-03-26 05:57:25 --> Undefined variable: totalTime
+#0 C:\xampp-newer\htdocs\bitmoser\vendor\codeigniter4\framework\system\Debug\Toolbar\Views\toolbar.tpl.php(56): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp-newer\\...', 56, Array)
+#1 C:\xampp-newer\htdocs\bitmoser\vendor\codeigniter4\framework\system\Debug\Toolbar.php(496): include('C:\\xampp-newer\\...')
+#2 C:\xampp-newer\htdocs\bitmoser\vendor\codeigniter4\framework\system\Debug\Toolbar.php(454): CodeIgniter\Debug\Toolbar->format(Array, 'html')
+#3 C:\xampp-newer\htdocs\bitmoser\app\Config\Events.php(44): CodeIgniter\Debug\Toolbar->respond()
+#4 [internal function]: CodeIgniter\Events\Events::Config\{closure}()
+#5 C:\xampp-newer\htdocs\bitmoser\vendor\codeigniter4\framework\system\Events\Events.php(188): call_user_func(Object(Closure))
+#6 C:\xampp-newer\htdocs\bitmoser\vendor\codeigniter4\framework\system\CodeIgniter.php(287): CodeIgniter\Events\Events::trigger('pre_system')
+#7 C:\xampp-newer\htdocs\bitmoser\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-03-26 06:03:11 --> Undefined variable: totalTime
+#0 C:\xampp-newer\htdocs\bitmoser\vendor\codeigniter4\framework\system\Debug\Toolbar\Views\toolbar.tpl.php(56): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp-newer\\...', 56, Array)
+#1 C:\xampp-newer\htdocs\bitmoser\vendor\codeigniter4\framework\system\Debug\Toolbar.php(496): include('C:\\xampp-newer\\...')
+#2 C:\xampp-newer\htdocs\bitmoser\vendor\codeigniter4\framework\system\Debug\Toolbar.php(454): CodeIgniter\Debug\Toolbar->format(Array, 'html')
+#3 C:\xampp-newer\htdocs\bitmoser\app\Config\Events.php(44): CodeIgniter\Debug\Toolbar->respond()
+#4 [internal function]: CodeIgniter\Events\Events::Config\{closure}()
+#5 C:\xampp-newer\htdocs\bitmoser\vendor\codeigniter4\framework\system\Events\Events.php(188): call_user_func(Object(Closure))
+#6 C:\xampp-newer\htdocs\bitmoser\vendor\codeigniter4\framework\system\CodeIgniter.php(287): CodeIgniter\Events\Events::trigger('pre_system')
+#7 C:\xampp-newer\htdocs\bitmoser\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
