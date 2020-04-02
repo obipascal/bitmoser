@@ -86,8 +86,11 @@
 <!-- End: BS Client Interface (CI) -->
 <script src="<?= base_url(); ?>/assets/js/jquery.min.js?h=1dd785e1de9a32e236b624ae268bb803"></script>
 <script src="<?= base_url(); ?>/assets/bootstrap/js/bootstrap.min.js?h=2394c9ffd5558f411ffdc3326e9a8962"></script>
+<!-- BS Js library -->
+<script src="<?= base_url();?>/globalAssets/js/bitmoser.min.js"></script>
+<!-- ./BS Js library -->
 <script src="<?= base_url(); ?>/assets/js/bsXhrRequest.js"></script>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
 <script src="<?= base_url(); ?>/assets/js/media/bs.css.min.js?h=f0736a06770d1612f0c146133f78fec5"></script>
 <script src="<?= base_url(); ?>/assets/js/media/bs.footer.min.js?h=d353226861fd5e1e6d4994ede49775c7"></script>
 <script src="<?= base_url(); ?>/assets/js/media/bs.media.min.js?h=0f798d9f5542535faa525f98afa9266b"></script>
