@@ -80,6 +80,9 @@
 <!-- End: BS Client Interface (CI) -->
 <script src="<?= base_url(); ?>/assets/js/jquery.min.js"></script>
 <script src="<?= base_url(); ?>/assets/bootstrap/js/bootstrap.min.js"></script>
+<!-- BS Js library -->
+<script src="<?= base_url();?>/assets/js/bitmoser.min.js"></script>
+<!-- ./BS Js library -->
 <script src="<?= base_url(); ?>/assets/js/bsXhrRequest.js"></script>
 
 <script src="<?= base_url(); ?>/assets/js/media/bs.css.min.js"></script>
@@ -143,6 +146,16 @@
     })();
 </script>
 <!-- End: intercom App -->
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        BS.alert({
+            title: 'Welcome to bitmoservice',
+            body: "'It's been a great pleasure to have you around.",
+            type: 'info' 
+        });
+    });    
+</script>
 </body>
 
 </html>
