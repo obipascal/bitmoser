@@ -55,8 +55,26 @@ $routes->group('auth', function($routes){
 $routes->group('api', function($routes){
 	$routes->post('auth/client/create', 'API\API_Authentication::bs_api_create_serviator');
 	$routes->post('auth/users/signup', 'API\API_Authentication::bs_api_signup');
+
+	//---[Dashboard:= client]---
+	$routes->post('dash/auth/login', 'Clients\API\Authentication::handleLoginForm');
+	//---[Dashboard:= ./client]---
 });
 /** [END] */
+
+//------[DASHBOARD]------
+
+
+$routes->group('dash', function($routes){
+//---[clients]---
+	$routes->get('ng/rendar/board', 'Clients\Dashboard::index');
+//---[./client]---
+	
+});
+
+
+//------[./DASHBOARD]------
+
 /**
  * --------------------------------------------------------------------
  * Additional Routing

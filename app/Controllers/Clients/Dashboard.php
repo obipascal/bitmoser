@@ -1,7 +1,8 @@
 <?php
-namespace App\Controllers;
+namespace App\Controllers\Clients;
 
-use CodeIgniter\I18n\Time;
+use App\Controllers\BaseController;
+
 
 class Dashboard extends BaseController
 {
@@ -55,14 +56,15 @@ class Dashboard extends BaseController
 
             
             // load the dasbhoard
-            echo view('includes/header');
-            echo view('includes/navbar');
-            echo view('includes/sidebar');
-            echo view('dashboard');
-            echo view('includes/footer');
+            echo view('clients/includes/header');
+            echo view('clients/includes/navbar');
+            echo view('clients/includes/sidebar');
+            echo view('clients/dashboard');
+            echo view('clients/includes/footer');
         } else {
             // load login form
-            echo $this->PA->bs_getRendarLoginForm();
+            $header['title'] = '.::Login Rendar Accoun';
+            echo view('clients/auth/auth_login', $header);
         }
     }
 }

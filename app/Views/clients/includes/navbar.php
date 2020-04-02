@@ -13,7 +13,7 @@
 		style="background-color: #464e6c;">
 		<div class="container-fluid">
 			<a class="navbar-brand" href="#"><img
-				src="<?=base_url();?>/assets/img/bitmoser_logo.png?h=dcfb26295dec07c0bc85de44c036119e"></a>
+				src="<?=base_url();?>/clientAssets/assets/img/bitmoser_logo.png?h=dcfb26295dec07c0bc85de44c036119e"></a>
 			<button class="navbar-toggler" data-toggle="collapse"
 				data-target="#navcol-1">
 				<span class="sr-only">Toggle navigation</span><span
@@ -66,7 +66,7 @@
 						class="dropdown-toggle nav-link border rounded-0 border-warning shadow bs-f-bold"
 						data-toggle="dropdown" aria-expanded="false" href="#"><img
 							class="rounded-circle"
-							src="<?=base_url();?>/assets/img/fb-id.jpg?h=15e214ee10342db66a416e821fbed12a"
+							src="<?=base_url();?>/clientAssets/assets/img/fb-id.jpg?h=15e214ee10342db66a416e821fbed12a"
 							style="width: 45px;">&nbsp;Welcome <strong><?=isset($profileName) ? $profileName : 'Obi, Pascal';?>,&nbsp;</strong><strong
 							class="text-warning">ID: <?=isset($ID) ? $ID : '1342422342';?></strong></a>
 						<div role="menu" class="dropdown-menu dropdown-menu-right dsh-user-dropdown">

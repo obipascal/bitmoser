@@ -12,7 +12,7 @@ $(document).ready(function(){
 
             //get the form data
             let formData = $(this).serializeArray();
-
+            var url = 'api/auth/client/create';
             //make an ajax request 
             $.ajax({
                 url: baseRequest +'api/auth/client/create',
