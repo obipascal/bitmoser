@@ -1,0 +1,35 @@
+.bs-router {
+  animation: 1.2s infinite linear route;
+  -webkit-animation: 1.2s infinite linear route;
+}
+
+@keyframes route {
+  0% {
+    color: #ffd700;
+  }
+  10% {
+    color: rgb(70, 78, 108);
+  }
+  40% {
+    color: #7dbcfd;
+  }
+  50% {
+    color: #00cc66;
+  }
+  100% {
+    color: #ffd700;
+    transform: rotate(1000deg);
+    transform-origin: center;
+  }
+}
+
+.bs-ajax-loader {
+  font-size: 25px;
+  font-style: italic;
+  position: relative;
+  z-index: 100000;
+  color: #ffffff;
+  display: block;
+  left: 0;
+}
+

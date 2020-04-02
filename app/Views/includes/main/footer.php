@@ -84,7 +84,7 @@
 <script src="<?= base_url();?>/globalAssets/js/bitmoser.min.js"></script>
 <!-- ./BS Js library -->
 <!-- FineUploader Js library -->
-<!-- <script src="<?= base_url(); ?>assets/plugin/fine-uploader/jquery.fine-uploader/jquery.fine-uploader.js"></script> -->
+<script defer src="<?= base_url(); ?>/globalAssets/finUploader/plugin/fine-uploader/jquery.fine-uploader/jquery.fine-uploader.js"></script>
 <!-- ./FineUploader Js library -->
 <script src="<?= base_url(); ?>/assets/js/bsXhrRequest.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
