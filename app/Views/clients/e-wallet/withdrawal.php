@@ -1,4 +1,4 @@
-<!--Start: Transactions -->
+<!--Start:  Withdrawal -->
 <div class="col">
     <!-- Start: Mobile sidebar toggler -->
     <ol class="breadcrumb border rounded-0">
@@ -10,10 +10,10 @@
         <header></header>
         <div class="container-fluid">
             <!-- Start: Withdrawal Card -->
-            <div class="card">
+            <div class="card mb-5">
                 <div class="card-body">
                     <div class="row">
-                        <div class="col-xl-3">
+                        <div class="col-xl-4">
                             <!-- Start: Items -->
                             <div class="bs-xl-bank-menu mb-2">
                                 <ul class="nav nav-pills flex-column mt-2">
@@ -23,10 +23,10 @@
                                     <!-- Start: Top-Up Wallet -->
                                     <li class="nav-item"><a class="nav-link active mb-1 show-topUp" href="#to-up" data-target="#bstopUpMd"><i class="fa fa-bank" style="color: #ededed;"></i><strong>&nbsp;Top-Up Wallet</strong></a></li>
                                     <!-- End: Top-Up Wallet -->
-                                    <!-- Start: Withdrawal -->
-                                    <li class="nav-item mb-1"><a class="nav-link active" href="?view=withdraw"><i class="fa fa-money" style="color: #ededed;"></i><strong>&nbsp;Withdrawal</strong></a></li>
-                                    <!-- End: Withdrawal -->
                                     
+                                    <!-- Start: Transaction History -->
+                                    <li class="nav-item"><a class="nav-link active" href="?view=transacts"><i class="fa fa-history" style="color: #ededed;"></i><strong>&nbsp;Transactions History</strong></a></li>
+                                    <!-- End: Transaction History -->
                                 </ul>
                             </div>
                             <!-- End: Items -->
@@ -41,10 +41,10 @@
                                             <!-- Start: Top-Up Wallet -->
                                             <li class="nav-item"><a class="nav-link active mb-1 show-topUp" href="#to-up" data-target="#bstopUpMd"><i class="fa fa-bank" style="color: #ededed;"></i><strong>&nbsp;Top-Up Wallet</strong></a></li>
                                             <!-- End: Top-Up Wallet -->
-                                            <!-- Start: Withdrawal -->
-                                            <li class="nav-item mb-1"><a class="nav-link active" href="?view=withdraw"><i class="fa fa-money" style="color: #ededed;"></i><strong>&nbsp;Withdrawal</strong></a></li>
-                                            <!-- End: Withdrawal -->
                                             
+                                            <!-- Start: Transaction History -->
+                                            <li class="nav-item"><a class="nav-link active" href="?view=transacts"><i class="fa fa-history" style="color: #ededed;"></i><strong>&nbsp;Transactions History</strong></a></li>
+                                            <!-- End: Transaction History -->
                                         </ul>
                                     </div>
                                 </div>
@@ -54,51 +54,13 @@
                         <div class="col">
                             <div class="card">
                                 <div class="card-header bs-bg" style="color: #f5f5f5;">
-                                    <h5 class="mb-0">Transaction History</h5>
+                                    <h5 class="mb-0">Make a withdrawal <a class="btn btn-primary text-warning border rounded shadow float-right show-topUp" role="button" href="#withdrawal" data-target="#bstopUpMd"><strong>Withdrawal</strong></a></h5>
                                 </div>
                                 <div class="card-body">
-                                    <!-- Start: Wallet Balance -->
-                                    <p class="lead border rounded shadow-lg card-text py-4 p-3 mb-4" style="color: #ffffff;background-color: #464e6c;"><strong class="text-warning" style="display: block;border-bottom: 1px solid #fff;font-weight: 700;">Avaliable Balance</strong><strong class="text-success" style="font-size: xx-large;font-weight: 800;">NGN</strong>
+                                    <p class="lead border rounded shadow-lg card-text py-4 p-3" style="color: #ffffff;background-color: #464e6c;"><strong class="text-warning" style="display: block;border-bottom: 1px solid #fff;font-weight: 700;">Avaliable Balance</strong><strong class="text-success" style="font-size: xx-large;font-weight: 800;">NGN</strong>
                                         <strong
                                             class="text-monospace ml-2" style="font-size: larger;font-weight: 700;font-family: monospace;">25,700.00</strong>
                                     </p>
-                                    <!-- End: Wallet Balance -->
-                                    <!-- Start: Transaction History -->
-                                    <div class="search-table-col">
-                                        <header>
-                                            <h3 class="bs-color">Transaction History Table</h3>
-                                            <hr>
-                                        </header>
-                                        <div class="form-group pull-right col-lg-4"><input type="text" placeholder="Search by typing here.." class="search form-control"></div><span class="counter pull-right"></span>
-                                        <div class="table-responsive table-bordered table table-hover table-bordered results">
-                                            <table class="table table-bordered table-hover">
-                                                <thead class="bill-header cs">
-                                                    <tr style="background-color: #464e6c;">
-                                                        <th id="trs-hd" class="col-lg-1">Transaction ID</th>
-                                                        <th id="trs-hd" class="col-lg-2">Description</th>
-                                                        <th id="trs-hd" class="col-lg-3">Status</th>
-                                                        <th id="trs-hd" class="col-lg-2">Date/Time</th>
-                                                        <th id="trs-hd" class="col-lg-2">Amount</th>
-                                                        <th id="trs-hd" class="col-lg-2">Action</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr class="warning no-result">
-                                                        <td colspan="12"><i class="fa fa-warning"></i>&nbsp; No Result !!!</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>01</td>
-                                                        <td>India</td>
-                                                        <td>Souvik Kundu</td>
-                                                        <td>Bootstrap Stuido</td>
-                                                        <td>2014</td>
-                                                        <td><button class="btn btn-danger" type="submit" style="margin-left: 5px;"><i class="fa fa-trash" style="font-size: 15px;"></i></button></td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                    <!-- End: Transaction History -->
                                 </div>
                             </div>
                             <!-- Start: Top-Up Wallet -->
@@ -128,4 +90,4 @@
     </div>
     <!-- End: Main content -->
 </div>
-<!--End: Transactions -->
+<!--End:  Withdrawal -->

@@ -68,6 +68,10 @@ $routes->group('api', function($routes){
 $routes->group('dash', function($routes){
 //---[clients]---
 	$routes->get('ng/rendar/board', 'Clients\Dashboard::index');
+	$routes->get('ng/rendar/services', 'Clients\Dashboard::services');
+	$routes->get('ng/rendar/request', 'Clients\Dashboard::request');
+	$routes->get('ng/rendar/ewallet', 'Clients\Dashboard::wallet');
+	$routes->get('ng/rendar/account', 'Clients\Dashboard::account');
 //---[./client]---
 	
 });

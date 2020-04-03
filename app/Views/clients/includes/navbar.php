@@ -23,15 +23,15 @@
 				<!-- Start: Home and Notification navbar -->
 				<ul class="nav navbar-nav mx-auto">
 					<li class="nav-item" role="presentation"><a
-						class="nav-link active bs-f-bold" href="#">Home</a></li>
+						class="nav-link active bs-f-bold" href="<?= base_url()?>">Home</a></li>
 					<li class="nav-item dropdown"><a
 						class="dropdown-toggle nav-link bs-f-bold" data-toggle="dropdown"
 						aria-expanded="false" href="#">&nbsp;<span
 							class="badge badge-pill badge-primary bs-bg"><i
-								class="fa fa-envelope-o bs-fa-2"></i></span><small
+								class="fa fa-bell-o bs-fa-2"></i></span><small
 							class="log-notification-number"><span
 								class="badge badge-primary tada animated infinite"
-								style="position: absolute; top: -1px; left: 48px; border-radius: 22rem; background-color: #bc3877;">0</span></small></a>
+								style="position: absolute; top: -1px; left: 48px; border-radius: 22rem; background-color: #bc3877; font-family:monospace; font-size:16px">0</span></small></a>
 						<div class="dropdown-menu" role="menu"
 							style="width: auto !important; position: absolute;">
 							<h6 class="dropdown-header text-muted" role="presentation">
@@ -52,7 +52,7 @@
 					<li
 						class="nav-item border rounded border-dark shadow-sm mr-5 p-1 mb-2"
 						role="presentation"><a class="nav-link"
-						href="e-wallet/wallet.html"><i class="fas fa-wallet bs-fa-2"
+						href="<?= base_url('/dash/ng/rendar/ewallet?view=balance');?>"><i class="fas fa-wallet bs-fa-2"
 							style="color: #af7505;"></i><strong class="ml-2"
 							style="color: #ffd700;">Balance&nbsp;</strong><strong
 							class="ml-2" style="font-size: larger; color: #00cc66;">NGN</strong><strong
@@ -73,11 +73,11 @@
 							<h6 role="presentation" class="dropdown-header text-muted"
 								style="font-size: x-small;">Last login <?= isset($lastLogin) ? $lastLogin : '';?> </h6>
 							<div role="presentation" class="dropdown-divider"></div>
-							<a role="presentation" href="account/view.html"
+							<a role="presentation" href="<?= base_url('/dash/ng/rendar/account?view=settings');?>"
 								class="dropdown-item bs-color"><i class="far fa-user-circle"></i> Profile</a><a
-								role="presentation" href="account/settings.html"
+								role="presentation" href="<?= base_url('/dash/ng/rendar/account?view=settings');?>"
 								class="dropdown-item bs-color"><i class="fa fa-gears"></i><strong> Settings</strong></a>
-							<a role="presentation" href="#" class="dropdown-item bs-color"><i
+							<a role="presentation" href="<?= base_url('/dash/ng/rendar/ewallet');?>" class="dropdown-item bs-color"><i
 								class="fas fa-wallet"></i><strong> Wallet</strong></a>
 							<div role="presentation" class="dropdown-divider"></div>
 							<a role="presentation" href="<?= base_url('/dash/ng/rendar/board?logout=true');?>"

@@ -68,19 +68,19 @@
 }
 
 @media only screen and (max-width: 786px) {
-  .bs-sm-bank-menu {
+  .bs-sm-bank-menu, .notify-mobile-view{
     display: block !important;
   }
 }
 
 @media only screen and (max-width: 786px) {
-  .bs-xl-bank-menu {
+  .bs-xl-bank-menu, .notify-dsk-view {
     display: none !important;
   }
 }
 
 @media only screen and (min-width: 800px) {
-  .bs-sm-bank-menu {
+  .bs-sm-bank-menu, .notify-mobile-view  {
     display: none !important;
   }
 }

@@ -44,7 +44,6 @@ class Dashboard extends BaseController
      */
     public function index()
     {
-        
 
         /**
          * First load the template without restriction
@@ -62,6 +61,9 @@ class Dashboard extends BaseController
                 // Navbar user info
                 $navBar['ID'] = $this->BS_SES->bs_rendar_publicID;
                 $navBar['profileName'] = $this->BS_SES->bs_rendar_firstName;
+
+                //sidebar
+                $sideBar['active'] = 'board';
 
                 //footer
                 $footer['scripts'] = '';
@@ -104,7 +106,7 @@ class Dashboard extends BaseController
                 // load the dasbhoard
                 echo view('clients/includes/header', $header);
                 echo view('clients/includes/navbar', $navBar);
-                echo view('clients/includes/sidebar');
+                echo view('clients/includes/sidebar', $sideBar);
                 echo view('clients/dashboard');
                 echo view('clients/includes/footer', $footer);
             }
@@ -127,38 +129,747 @@ class Dashboard extends BaseController
     }
 
     /**
-     * Logout Rendar from dashboard
+     * Services route
      *
      * @return void
      */
-    private function logout()
+    public function services()
     {
-        //make sure rendar is loggedin before destorying the session
+        //make sure rendar is login 
         if($this->BS_SES->bs_rendar_isActive)
         {
-            //now check that user clicks on logout
-            $logout = $this->request->getGet('logout');
-
-            if($logout)
-            {
-                //if the value coded is intact that's true destory session vars
-                $this->BS_SES->destroy();
-                
-                
-
-            }
-
-            if(!$this->BS_SES->bs_rendar_isActive || !isset($this->BS_SES->bs_rendar_isActive))
-            {
-                redirect();
-            }
             
-        }
-        else
-        {
-            //go-to login
+            if(is_null($this->request->getGet('logout')))
+            {
+                // title bar
+                $header['title'] = $this->BS_SES->bs_rendar_firstName . ' > Services';
 
-            redirect();
+                // Navbar user info
+                $navBar['ID'] = $this->BS_SES->bs_rendar_publicID;
+                $navBar['profileName'] = $this->BS_SES->bs_rendar_firstName;
+
+                //sidebar
+                $sideBar['active'] = 'services';
+
+                //footer
+                $footer['scripts'] = '';
+                
+                //resolve first login message and last login  on dashboard
+                $firstLogin = $this->BS_SES->bs_rendar_first_loggedin;
+                $loginCount = $this->BS_SES->bs_rendar_loggedin_count;
+                $lastLogin = $this->BS_SES->bs_rendar_last_loggedin;            
+                
+                if(!(empty($firstLogin) && empty($loginCount) && is_null($firstLogin) && is_null($loginCount)))
+                {
+                    //resovle last login
+                    if($firstLogin && (int)$loginCount === 0)
+                    {
+                        
+                        $navBar['firstLogin'] = true;
+
+                    }
+                    else
+                    {
+                        $navBar['firstLogin'] = false;
+                    }
+                }
+                else
+                {
+                    $footer['scripts'] = '<script> BS.alert({title: "Error Retrieving client data", body: "Unable to parse client information", type: "danger"});</script>';
+                }
+                
+                //resovle the last login
+                if(!(empty($lastLogin) && is_null($lastLogin)))
+                {
+                    $lastlog = Time::parse($lastLogin, 'Africa/Lagos', 'en_GB');
+                    $humaniz = $lastlog->humanize();
+
+                    $navBar['lastLogin'] = $humaniz;
+                }
+
+                /** [The view] */
+                                
+                    echo view('clients/includes/header', $header);
+                    echo view('clients/includes/navbar', $navBar);
+                    echo view('clients/includes/sidebar', $sideBar);
+                    echo view('clients/services/create');
+                    echo view('clients/includes/footer', $footer);
+                /** [End] */
+            }
+            else
+            {
+                //logout user
+                $this->BS_SES->destroy();
+
+                return redirect()->to(base_url().'/dash/ng/rendar/board');
+
+            }
+             
+        }
+        else {
+           return redirect()->to(base_url().'/dash/ng/rendar/board');
         }
     }
+
+    /**
+     * Request route
+     *
+     * @return void
+     */
+    public function request()
+    {
+        //make sure rendar is login 
+        if($this->BS_SES->bs_rendar_isActive)
+        {
+            
+            if(is_null($this->request->getGet('logout')))
+            {
+                /**Route between accept request and new request */
+                switch ($this->request->getGet('view')) {
+                    case 'accept':
+                        //show the accept template
+                        // title bar
+                        $header['title'] = $this->BS_SES->bs_rendar_firstName . ' > Confirm Accepted Request';
+
+                        // Navbar user info
+                        $navBar['ID'] = $this->BS_SES->bs_rendar_publicID;
+                        $navBar['profileName'] = $this->BS_SES->bs_rendar_firstName;
+
+                        //sidebar
+                        $sideBar['active'] = 'request';
+
+                        //footer
+                        $footer['scripts'] = '';
+                        
+                        //resolve first login message and last login  on dashboard
+                        $firstLogin = $this->BS_SES->bs_rendar_first_loggedin;
+                        $loginCount = $this->BS_SES->bs_rendar_loggedin_count;
+                        $lastLogin = $this->BS_SES->bs_rendar_last_loggedin;            
+                        
+                        if(!(empty($firstLogin) && empty($loginCount) && is_null($firstLogin) && is_null($loginCount)))
+                        {
+                            //resovle last login
+                            if($firstLogin && (int)$loginCount === 0)
+                            {
+                                
+                                $navBar['firstLogin'] = true;
+
+                            }
+                            else
+                            {
+                                $navBar['firstLogin'] = false;
+                            }
+                        }
+                        else
+                        {
+                            $footer['scripts'] = '<script> BS.alert({title: "Error Retrieving client data", body: "Unable to parse client information", type: "danger"});</script>';
+                        }
+                        
+                        //resovle the last login
+                        if(!(empty($lastLogin) && is_null($lastLogin)))
+                        {
+                            $lastlog = Time::parse($lastLogin, 'Africa/Lagos', 'en_GB');
+                            $humaniz = $lastlog->humanize();
+
+                            $navBar['lastLogin'] = $humaniz;
+                        }
+
+                        /** [The view] */
+                                        
+                            echo view('clients/includes/header', $header);
+                            echo view('clients/includes/navbar', $navBar);
+                            echo view('clients/includes/sidebar', $sideBar);
+                            echo view('clients/request/accepted');
+                            echo view('clients/includes/footer', $footer);
+                        /** [End] */
+                        break;
+                    case 'new':
+                            //show the newly request from clients
+                            // title bar
+                        $header['title'] = $this->BS_SES->bs_rendar_firstName . ' > New Request';
+
+                        // Navbar user info
+                        $navBar['ID'] = $this->BS_SES->bs_rendar_publicID;
+                        $navBar['profileName'] = $this->BS_SES->bs_rendar_firstName;
+
+                        //sidebar
+                        $sideBar['active'] = 'request';
+
+                        //footer
+                        $footer['scripts'] = '';
+                        
+                        //resolve first login message and last login  on dashboard
+                        $firstLogin = $this->BS_SES->bs_rendar_first_loggedin;
+                        $loginCount = $this->BS_SES->bs_rendar_loggedin_count;
+                        $lastLogin = $this->BS_SES->bs_rendar_last_loggedin;            
+                        
+                        if(!(empty($firstLogin) && empty($loginCount) && is_null($firstLogin) && is_null($loginCount)))
+                        {
+                            //resovle last login
+                            if($firstLogin && (int)$loginCount === 0)
+                            {
+                                
+                                $navBar['firstLogin'] = true;
+
+                            }
+                            else
+                            {
+                                $navBar['firstLogin'] = false;
+                            }
+                        }
+                        else
+                        {
+                            $footer['scripts'] = '<script> BS.alert({title: "Error Retrieving client data", body: "Unable to parse client information", type: "danger"});</script>';
+                        }
+                        
+                        //resovle the last login
+                        if(!(empty($lastLogin) && is_null($lastLogin)))
+                        {
+                            $lastlog = Time::parse($lastLogin, 'Africa/Lagos', 'en_GB');
+                            $humaniz = $lastlog->humanize();
+
+                            $navBar['lastLogin'] = $humaniz;
+                        }
+
+                        /** [The view] */
+                                        
+                            echo view('clients/includes/header', $header);
+                            echo view('clients/includes/navbar', $navBar);
+                            echo view('clients/includes/sidebar', $sideBar);
+                            echo view('clients/request/request');
+                            echo view('clients/includes/footer', $footer);
+                        /** [End] */
+                        break;
+                    
+                    default:
+                        //be default show the nwe request 
+                        // title bar
+                        $header['title'] = $this->BS_SES->bs_rendar_firstName . ' > New Request';
+
+                        // Navbar user info
+                        $navBar['ID'] = $this->BS_SES->bs_rendar_publicID;
+                        $navBar['profileName'] = $this->BS_SES->bs_rendar_firstName;
+
+                        //sidebar
+                        $sideBar['active'] = 'request';
+
+                        //footer
+                        $footer['scripts'] = '';
+                        
+                        //resolve first login message and last login  on dashboard
+                        $firstLogin = $this->BS_SES->bs_rendar_first_loggedin;
+                        $loginCount = $this->BS_SES->bs_rendar_loggedin_count;
+                        $lastLogin = $this->BS_SES->bs_rendar_last_loggedin;            
+                        
+                        if(!(empty($firstLogin) && empty($loginCount) && is_null($firstLogin) && is_null($loginCount)))
+                        {
+                            //resovle last login
+                            if($firstLogin && (int)$loginCount === 0)
+                            {
+                                
+                                $navBar['firstLogin'] = true;
+
+                            }
+                            else
+                            {
+                                $navBar['firstLogin'] = false;
+                            }
+                        }
+                        else
+                        {
+                            $footer['scripts'] = '<script> BS.alert({title: "Error Retrieving client data", body: "Unable to parse client information", type: "danger"});</script>';
+                        }
+                        
+                        //resovle the last login
+                        if(!(empty($lastLogin) && is_null($lastLogin)))
+                        {
+                            $lastlog = Time::parse($lastLogin, 'Africa/Lagos', 'en_GB');
+                            $humaniz = $lastlog->humanize();
+
+                            $navBar['lastLogin'] = $humaniz;
+                        }
+
+                        /** [The view] */
+                                        
+                            echo view('clients/includes/header', $header);
+                            echo view('clients/includes/navbar', $navBar);
+                            echo view('clients/includes/sidebar', $sideBar);
+                            echo view('clients/request/request');
+                            echo view('clients/includes/footer', $footer);
+                        /** [End] */
+                        break;
+                }
+            }
+            else
+            {
+                //logout user
+                $this->BS_SES->destroy();
+
+                return redirect()->to(base_url().'/dash/ng/rendar/board');
+
+            }
+             
+        }
+        else {
+           return redirect()->to(base_url().'/dash/ng/rendar/board');
+        }
+    }
+
+    /**
+     * Wallet route
+     *
+     * @return void
+     */
+    public function wallet()
+    {
+        //make sure rendar is login 
+        if($this->BS_SES->bs_rendar_isActive)
+        {
+            
+            if(is_null($this->request->getGet('logout')))
+            {
+                switch ($this->request->getGet('view')) {
+                    case 'withdraw':
+                        // title bar
+                        $header['title'] = $this->BS_SES->bs_rendar_firstName . ' > Withdrawal';
+
+                        // Navbar user info
+                        $navBar['ID'] = $this->BS_SES->bs_rendar_publicID;
+                        $navBar['profileName'] = $this->BS_SES->bs_rendar_firstName;
+
+                        //sidebar
+                        $sideBar['active'] = 'wallet';
+
+                        //footer
+                        $footer['scripts'] = '';
+                        
+                        //resolve first login message and last login  on dashboard
+                        $firstLogin = $this->BS_SES->bs_rendar_first_loggedin;
+                        $loginCount = $this->BS_SES->bs_rendar_loggedin_count;
+                        $lastLogin = $this->BS_SES->bs_rendar_last_loggedin;            
+                        
+                        if(!(empty($firstLogin) && empty($loginCount) && is_null($firstLogin) && is_null($loginCount)))
+                        {
+                            //resovle last login
+                            if($firstLogin && (int)$loginCount === 0)
+                            {
+                                
+                                $navBar['firstLogin'] = true;
+
+                            }
+                            else
+                            {
+                                $navBar['firstLogin'] = false;
+                            }
+                        }
+                        else
+                        {
+                            $footer['scripts'] = '<script> BS.alert({title: "Error Retrieving client data", body: "Unable to parse client information", type: "danger"});</script>';
+                        }
+                        
+                        //resovle the last login
+                        if(!(empty($lastLogin) && is_null($lastLogin)))
+                        {
+                            $lastlog = Time::parse($lastLogin, 'Africa/Lagos', 'en_GB');
+                            $humaniz = $lastlog->humanize();
+
+                            $navBar['lastLogin'] = $humaniz;
+                        }
+
+                        /** [The view] */
+                                        
+                            echo view('clients/includes/header', $header);
+                            echo view('clients/includes/navbar', $navBar);
+                            echo view('clients/includes/sidebar', $sideBar);
+                            echo view('clients/e-wallet/withdrawal');
+                            echo view('clients/includes/footer', $footer);
+                        /** [End] */
+                        break;
+                    case 'balance':
+                        // title bar
+                        $header['title'] = $this->BS_SES->bs_rendar_firstName . ' > Wallet';
+
+                        // Navbar user info
+                        $navBar['ID'] = $this->BS_SES->bs_rendar_publicID;
+                        $navBar['profileName'] = $this->BS_SES->bs_rendar_firstName;
+
+                        //sidebar
+                        $sideBar['active'] = 'wallet';
+
+                        //footer
+                        $footer['scripts'] = '';
+                        
+                        //resolve first login message and last login  on dashboard
+                        $firstLogin = $this->BS_SES->bs_rendar_first_loggedin;
+                        $loginCount = $this->BS_SES->bs_rendar_loggedin_count;
+                        $lastLogin = $this->BS_SES->bs_rendar_last_loggedin;            
+                        
+                        if(!(empty($firstLogin) && empty($loginCount) && is_null($firstLogin) && is_null($loginCount)))
+                        {
+                            //resovle last login
+                            if($firstLogin && (int)$loginCount === 0)
+                            {
+                                
+                                $navBar['firstLogin'] = true;
+
+                            }
+                            else
+                            {
+                                $navBar['firstLogin'] = false;
+                            }
+                        }
+                        else
+                        {
+                            $footer['scripts'] = '<script> BS.alert({title: "Error Retrieving client data", body: "Unable to parse client information", type: "danger"});</script>';
+                        }
+                        
+                        //resovle the last login
+                        if(!(empty($lastLogin) && is_null($lastLogin)))
+                        {
+                            $lastlog = Time::parse($lastLogin, 'Africa/Lagos', 'en_GB');
+                            $humaniz = $lastlog->humanize();
+
+                            $navBar['lastLogin'] = $humaniz;
+                        }
+
+                        /** [The view] */
+                                        
+                            echo view('clients/includes/header', $header);
+                            echo view('clients/includes/navbar', $navBar);
+                            echo view('clients/includes/sidebar', $sideBar);
+                            echo view('clients/e-wallet/wallet');
+                            echo view('clients/includes/footer', $footer);
+                        /** [End] */
+                        break;
+                    case 'transacts':
+                        // title bar
+                        $header['title'] = $this->BS_SES->bs_rendar_firstName . ' > Transactions History';
+
+                        // Navbar user info
+                        $navBar['ID'] = $this->BS_SES->bs_rendar_publicID;
+                        $navBar['profileName'] = $this->BS_SES->bs_rendar_firstName;
+
+                        //sidebar
+                        $sideBar['active'] = 'wallet';
+
+                        //footer
+                        $footer['scripts'] = '';
+                        
+                        //resolve first login message and last login  on dashboard
+                        $firstLogin = $this->BS_SES->bs_rendar_first_loggedin;
+                        $loginCount = $this->BS_SES->bs_rendar_loggedin_count;
+                        $lastLogin = $this->BS_SES->bs_rendar_last_loggedin;            
+                        
+                        if(!(empty($firstLogin) && empty($loginCount) && is_null($firstLogin) && is_null($loginCount)))
+                        {
+                            //resovle last login
+                            if($firstLogin && (int)$loginCount === 0)
+                            {
+                                
+                                $navBar['firstLogin'] = true;
+
+                            }
+                            else
+                            {
+                                $navBar['firstLogin'] = false;
+                            }
+                        }
+                        else
+                        {
+                            $footer['scripts'] = '<script> BS.alert({title: "Error Retrieving client data", body: "Unable to parse client information", type: "danger"});</script>';
+                        }
+                        
+                        //resovle the last login
+                        if(!(empty($lastLogin) && is_null($lastLogin)))
+                        {
+                            $lastlog = Time::parse($lastLogin, 'Africa/Lagos', 'en_GB');
+                            $humaniz = $lastlog->humanize();
+
+                            $navBar['lastLogin'] = $humaniz;
+                        }
+
+                        /** [The view] */
+                                        
+                            echo view('clients/includes/header', $header);
+                            echo view('clients/includes/navbar', $navBar);
+                            echo view('clients/includes/sidebar', $sideBar);
+                            echo view('clients/e-wallet/transactions');
+                            echo view('clients/includes/footer', $footer);
+                        /** [End] */
+                        break;
+                    
+                    default:
+                        // title bar
+                        $header['title'] = $this->BS_SES->bs_rendar_firstName . ' > Wallet';
+
+                        // Navbar user info
+                        $navBar['ID'] = $this->BS_SES->bs_rendar_publicID;
+                        $navBar['profileName'] = $this->BS_SES->bs_rendar_firstName;
+
+                        //sidebar
+                        $sideBar['active'] = 'wallet';
+
+                        //footer
+                        $footer['scripts'] = '';
+                        
+                        //resolve first login message and last login  on dashboard
+                        $firstLogin = $this->BS_SES->bs_rendar_first_loggedin;
+                        $loginCount = $this->BS_SES->bs_rendar_loggedin_count;
+                        $lastLogin = $this->BS_SES->bs_rendar_last_loggedin;            
+                        
+                        if(!(empty($firstLogin) && empty($loginCount) && is_null($firstLogin) && is_null($loginCount)))
+                        {
+                            //resovle last login
+                            if($firstLogin && (int)$loginCount === 0)
+                            {
+                                
+                                $navBar['firstLogin'] = true;
+
+                            }
+                            else
+                            {
+                                $navBar['firstLogin'] = false;
+                            }
+                        }
+                        else
+                        {
+                            $footer['scripts'] = '<script> BS.alert({title: "Error Retrieving client data", body: "Unable to parse client information", type: "danger"});</script>';
+                        }
+                        
+                        //resovle the last login
+                        if(!(empty($lastLogin) && is_null($lastLogin)))
+                        {
+                            $lastlog = Time::parse($lastLogin, 'Africa/Lagos', 'en_GB');
+                            $humaniz = $lastlog->humanize();
+
+                            $navBar['lastLogin'] = $humaniz;
+                        }
+
+                        /** [The view] */
+                                        
+                            echo view('clients/includes/header', $header);
+                            echo view('clients/includes/navbar', $navBar);
+                            echo view('clients/includes/sidebar', $sideBar);
+                            echo view('clients/e-wallet/wallet');
+                            echo view('clients/includes/footer', $footer);
+                        /** [End] */
+                        break;
+                }
+            }
+            else
+            {
+                //logout user
+                $this->BS_SES->destroy();
+
+                return redirect()->to(base_url().'/dash/ng/rendar/board');
+
+            }
+             
+        }
+        else {
+           return redirect()->to(base_url().'/dash/ng/rendar/board');
+        }
+    }
+
+    /**
+     * Account route
+     *
+     * @return void
+     */
+    public function account()
+    {
+        //make sure rendar is login 
+        if($this->BS_SES->bs_rendar_isActive)
+        {
+            
+            if(is_null($this->request->getGet('logout')))
+            {
+               switch ($this->request->getGet('view')) {
+                   case 'settings':
+                       // title bar
+                        $header['title'] = $this->BS_SES->bs_rendar_firstName . ' > Settings';
+
+                        // Navbar user info
+                        $navBar['ID'] = $this->BS_SES->bs_rendar_publicID;
+                        $navBar['profileName'] = $this->BS_SES->bs_rendar_firstName;
+
+                        //sidebar
+                        $sideBar['active'] = 'account';
+
+                        //footer
+                        $footer['scripts'] = '';
+                        
+                        //resolve first login message and last login  on dashboard
+                        $firstLogin = $this->BS_SES->bs_rendar_first_loggedin;
+                        $loginCount = $this->BS_SES->bs_rendar_loggedin_count;
+                        $lastLogin = $this->BS_SES->bs_rendar_last_loggedin;            
+                        
+                        if(!(empty($firstLogin) && empty($loginCount) && is_null($firstLogin) && is_null($loginCount)))
+                        {
+                            //resovle last login
+                            if($firstLogin && (int)$loginCount === 0)
+                            {
+                                
+                                $navBar['firstLogin'] = true;
+
+                            }
+                            else
+                            {
+                                $navBar['firstLogin'] = false;
+                            }
+                        }
+                        else
+                        {
+                            $footer['scripts'] = '<script> BS.alert({title: "Error Retrieving client data", body: "Unable to parse client information", type: "danger"});</script>';
+                        }
+                        
+                        //resovle the last login
+                        if(!(empty($lastLogin) && is_null($lastLogin)))
+                        {
+                            $lastlog = Time::parse($lastLogin, 'Africa/Lagos', 'en_GB');
+                            $humaniz = $lastlog->humanize();
+
+                            $navBar['lastLogin'] = $humaniz;
+                        }
+
+                        /** [The view] */
+                                        
+                            echo view('clients/includes/header', $header);
+                            echo view('clients/includes/navbar', $navBar);
+                            echo view('clients/includes/sidebar', $sideBar);
+                            echo view('clients/account/settings');
+                            echo view('clients/includes/footer', $footer);
+                        /** [End] */
+                       break;
+                    case 'account':
+                        // title bar
+                        $header['title'] = $this->BS_SES->bs_rendar_firstName . ' > Account';
+
+                        // Navbar user info
+                        $navBar['ID'] = $this->BS_SES->bs_rendar_publicID;
+                        $navBar['profileName'] = $this->BS_SES->bs_rendar_firstName;
+
+                        //sidebar
+                        $sideBar['active'] = 'account';
+
+                        //footer
+                        $footer['scripts'] = '';
+                        
+                        //resolve first login message and last login  on dashboard
+                        $firstLogin = $this->BS_SES->bs_rendar_first_loggedin;
+                        $loginCount = $this->BS_SES->bs_rendar_loggedin_count;
+                        $lastLogin = $this->BS_SES->bs_rendar_last_loggedin;            
+                        
+                        if(!(empty($firstLogin) && empty($loginCount) && is_null($firstLogin) && is_null($loginCount)))
+                        {
+                            //resovle last login
+                            if($firstLogin && (int)$loginCount === 0)
+                            {
+                                
+                                $navBar['firstLogin'] = true;
+
+                            }
+                            else
+                            {
+                                $navBar['firstLogin'] = false;
+                            }
+                        }
+                        else
+                        {
+                            $footer['scripts'] = '<script> BS.alert({title: "Error Retrieving client data", body: "Unable to parse client information", type: "danger"});</script>';
+                        }
+                        
+                        //resovle the last login
+                        if(!(empty($lastLogin) && is_null($lastLogin)))
+                        {
+                            $lastlog = Time::parse($lastLogin, 'Africa/Lagos', 'en_GB');
+                            $humaniz = $lastlog->humanize();
+
+                            $navBar['lastLogin'] = $humaniz;
+                        }
+
+                        /** [The view] */
+                                        
+                            echo view('clients/includes/header', $header);
+                            echo view('clients/includes/navbar', $navBar);
+                            echo view('clients/includes/sidebar', $sideBar);
+                            echo view('clients/account/view');
+                            echo view('clients/includes/footer', $footer);
+                        /** [End] */
+                        break;
+                   
+                   default:
+                        // title bar
+                        $header['title'] = $this->BS_SES->bs_rendar_firstName . ' > Account';
+
+                        // Navbar user info
+                        $navBar['ID'] = $this->BS_SES->bs_rendar_publicID;
+                        $navBar['profileName'] = $this->BS_SES->bs_rendar_firstName;
+
+                        //sidebar
+                        $sideBar['active'] = 'account';
+
+                        //footer
+                        $footer['scripts'] = '';
+                        
+                        //resolve first login message and last login  on dashboard
+                        $firstLogin = $this->BS_SES->bs_rendar_first_loggedin;
+                        $loginCount = $this->BS_SES->bs_rendar_loggedin_count;
+                        $lastLogin = $this->BS_SES->bs_rendar_last_loggedin;            
+                        
+                        if(!(empty($firstLogin) && empty($loginCount) && is_null($firstLogin) && is_null($loginCount)))
+                        {
+                            //resovle last login
+                            if($firstLogin && (int)$loginCount === 0)
+                            {
+                                
+                                $navBar['firstLogin'] = true;
+
+                            }
+                            else
+                            {
+                                $navBar['firstLogin'] = false;
+                            }
+                        }
+                        else
+                        {
+                            $footer['scripts'] = '<script> BS.alert({title: "Error Retrieving client data", body: "Unable to parse client information", type: "danger"});</script>';
+                        }
+                        
+                        //resovle the last login
+                        if(!(empty($lastLogin) && is_null($lastLogin)))
+                        {
+                            $lastlog = Time::parse($lastLogin, 'Africa/Lagos', 'en_GB');
+                            $humaniz = $lastlog->humanize();
+
+                            $navBar['lastLogin'] = $humaniz;
+                        }
+
+                        /** [The view] */
+                                        
+                            echo view('clients/includes/header', $header);
+                            echo view('clients/includes/navbar', $navBar);
+                            echo view('clients/includes/sidebar', $sideBar);
+                            echo view('clients/account/view');
+                            echo view('clients/includes/footer', $footer);
+                        /** [End] */
+                       break;
+               }
+            }
+            else
+            {
+                //logout user
+                $this->BS_SES->destroy();
+
+                return redirect()->to(base_url().'/dash/ng/rendar/board');
+
+            }
+             
+        }
+        else {
+           return redirect()->to(base_url().'/dash/ng/rendar/board');
+        }
+    }
+
+
 }
