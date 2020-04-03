@@ -2,7 +2,7 @@
 namespace App\Controllers\Clients\API;
 
 use App\Controllers\BaseController;
-
+use CodeIgniter\I18n\Time;
 class Authentication extends BaseController
 {
 
@@ -22,9 +22,9 @@ class Authentication extends BaseController
     {
         $this->BS_Ses = \Config\Services::session();
         $this->BS_Response = \Config\Services::bs_http_response();
-        $this->BS_RendarEntity = new \App\Entities\Rendar_E();
-        $this->BS_ReadRendarModal = new \App\Models\Rendar\ReadRendar_M();
-        $this->BS_WriteRendarModal = new \App\Models\Rendar\Write_Rendar_M();
+        $this->BS_RendarEntity = new \App\Entities\Clients\Rendar_E();
+        $this->BS_ReadRendarModal = new \App\Models\Clients\Rendar\ReadRendar_M();
+        $this->BS_WriteRendarModal = new \App\Models\Clients\Rendar\Write_Rendar_M();
         $this->PA = \Config\Services::assistant();
     }
 
@@ -60,28 +60,29 @@ class Authentication extends BaseController
                 if (! $isOk) {
                     $this->BS_Response->send_json_response(implode('', $error), false, true);
                     // $this->BS_Response->send_json_response($client, false, true);
-                } else {                    
-
+                } else {                   
+                    
+                    $this->BS_RendarEntity = $this->BS_WriteRendarModal->find($client->client_profile_id);
                     /** //TODO: [START: UPDATE THE LOGIN STATUS OF THE CLIENT] */
 
                         //retrieve the status
                         $prevLoginStatus = $this->BS_ReadRendarModal->getLoginStatus($client->client_profile_id);
-
-                        if(!(empty($prevLoginStatus || is_null($prevLoginStatus))))
+                        
+                        if(!(empty($prevLoginStatus)  || is_null($prevLoginStatus)))
                         {
                             //check the first_login:bool and login_count:int
 
-                            if($prevLoginStatus->firstLogin && (int)$prevLoginStatus->loginCount === 0)
+                            if($prevLoginStatus->first_login && (int)$prevLoginStatus->login_count === 0)
                             {
                                 // this is client first login
 
                                 //generate new client login status and save it
-                                $loginInfo['client_first_loggedin'] = false; 
-                                $loginInfo['client_loggedin_count'] = (int)$prevLoginStatus->loginCount + 1;
-                                $loginInfo['client_last_loggedin'] = $this->PA->bs_parseDateTime();
+                                $this->BS_RendarEntity->client_first_loggedin  = false; 
+                                $this->BS_RendarEntity->client_loggedin_count = (int)$prevLoginStatus->login_count + 1;
+                                $this->BS_RendarEntity->client_last_loggedin = $this->PA->bs_parseDateTime();
 
                                 //save the status
-                                $this->BS_RendarEntity->fill($loginInfo);
+                                
                                 $this->BS_WriteRendarModal->save($this->BS_RendarEntity);
                             }
                             else
@@ -89,57 +90,64 @@ class Authentication extends BaseController
                                 //this is client second or third login
 
                                 //generate new client login status and save it
-                                $loginInfo['client_first_loggedin'] = false; 
-                                $loginInfo['client_loggedin_count'] = (int)$prevLoginStatus->loginCount + 1;
-                                $loginInfo['client_last_loggedin'] = $this->PA->bs_parseDateTime();
+                                $this->BS_RendarEntity->client_first_loggedin  = false; 
+                                $this->BS_RendarEntity->client_loggedin_count = (int)$prevLoginStatus->login_count + 1;
+                                $this->BS_RendarEntity->client_last_loggedin = $this->PA->bs_parseDateTime();
 
                                 //save the status
-                                $this->BS_RendarEntity->fill($loginInfo);
-                                $this->BS_WriteRendarModal->save($this->BS_RendarEntity);
+                                $this->BS_WriteRendarModal->save($this->BS_RendarEntity);                             
+                                
                             }
+
+                            //re-fetch client with the login infos
+                            $client = $this->BS_ReadRendarModal->find($client->client_profile_id);
+
+                            // destory any active session. to start a new one.
+                            
+                            // password was verified okay
+                            /** //TODO: [START: CLIENT SESSION] */
+                                $session_vars['bs_rendar_isActive'] = TRUE;
+                                $session_vars['bs_rendar_id'] = $client->client_id;
+                                $session_vars['bs_rendar_publicID'] = $client->client_profile_id;
+                                $session_vars['bs_rendar_sessionPSW'] = $client->client_pass_key;
+                                $session_vars['bs_rendar_surname'] = $client->client_surname;
+                                $session_vars['bs_rendar_firstName'] = $client->client_firstname;
+                                $session_vars['bs_rendar_lastName'] = $client->client_lastname;
+                                $session_vars['bs_rendar_shortName'] = ! is_null($client->client_surname) || ! empty($client->client_surname) ? $client->client_surname : $client->client_firstname;
+                                $session_vars['bs_rendar_fullName'] = ! is_null($client->client_surname) || ! empty($client->client_surname) ? $client->client_surname . ', ' . $client->client_firstname . ' ' . $client->client_lastname : 'Not Set';
+                                $session_vars['bs_rendar_countryCode'] = $client->client_country_code;
+                                $session_vars['bs_rendar_phoneNumber'] = $client->client_phone_number;
+                                $session_vars['bs_rendar_countryNationality'] = $client->client_country_nationality;
+                                $session_vars['bs_rendar_countryRegion'] = $client->client_country_region;
+                                $session_vars['bs_rendar_occupation'] = $client->client_occupation;
+                                $session_vars['bs_rendar_businessBrand'] = $client->client_business_brand;
+                                $session_vars['bs_rendar_businessEmail'] = $client->client_business_email;
+                                $session_vars['bs_rendar_businessOfficeAddress'] = $client->client_business_office_address;
+                                $session_vars['bs_rendar_serviceSubPlan'] = $client->client_service_sub_plan;
+                                $session_vars['bs_rendar_serviceCategory'] = $client->client_service_category;
+                                $session_vars['bs_rendar_serviceType'] = $client->client_service_type;
+                                $session_vars['bs_rendar_registeredOn'] = $client->created_at;
+                                $session_vars['bs_rendar_durationStayed'] = $client->client_elapse_duration;
+                                $session_vars['bs_rendar_ranking'] = $client->client_ranking;
+                                $session_vars['bs_rendar_last_loggedin'] = $client->client_last_loggedin;
+                                $session_vars['bs_rendar_first_loggedin'] = $client->client_first_loggedin;
+                                $session_vars['bs_rendar_loggedin_count'] = $client->client_loggedin_count;
+
+                                // init session
+                                $this->BS_Ses->set($session_vars);
+
+                                if ($this->BS_Ses->bs_rendar_isActive) {
+                                    $this->BS_Response->send_json_response('LoggedIn! Redirecting to dashboard.', true, false, true, base_url().'/dash/ng/rendar/board');
+                                } else {
+                                    $this->BS_Response->send_json_response('<span class="text-danger">Unable to proccess your session. Please contact ' . mailto('support@bitmoservice.com', 'Support') . ' concerning this error for more info.</span>', false, true);
+                                }
+                            /**[END: CLIENT SESSION] */
+                        }
+                        else
+                        {
+                            $this->BS_Response->send_json_response('Unable to retrieve login status', false, true);
                         }
                     /** [END: UPDATE THE LOGIN STATUS OF THE CLIENT] */
-
-                    //re-fetch client with the login infos
-                    $client = $this->BS_ReadRendarModal->find($client->client_profile_id);
-
-                    // destory any active session. to start a new one.
-                    $this->BS_Ses->destroy();
-                    // password was verified okay
-                    /** //TODO: [START: CLIENT SESSION] */
-                        $session_vars['bs_rendar_isActive'] = TRUE;
-                        $session_vars['bs_rendar_id'] = $client->client_id;
-                        $session_vars['bs_rendar_publicID'] = $client->client_profile_id;
-                        $session_vars['bs_rendar_sessionPSW'] = $client->client_pass_key;
-                        $session_vars['bs_rendar_surname'] = $client->client_surname;
-                        $session_vars['bs_rendar_firstName'] = $client->client_firstname;
-                        $session_vars['bs_rendar_lastName'] = $client->client_lastname;
-                        $session_vars['bs_rendar_shortName'] = ! is_null($client->client_surname) || ! empty($client->client_surname) ? $client->client_surname : $client->client_firstname;
-                        $session_vars['bs_rendar_fullName'] = ! is_null($client->client_surname) || ! empty($client->client_surname) ? $client->client_surname . ', ' . $client->client_firstname . ' ' . $client->client_lastname : 'Not Set';
-                        $session_vars['bs_rendar_countryCode'] = $client->client_country_code;
-                        $session_vars['bs_rendar_phoneNumber'] = $client->client_phone_number;
-                        $session_vars['bs_rendar_countryNationality'] = $client->client_country_nationality;
-                        $session_vars['bs_rendar_countryRegion'] = $client->client_country_region;
-                        $session_vars['bs_rendar_occupation'] = $client->client_ocuupation;
-                        $session_vars['bs_rendar_businessBrand'] = $client->client_business_brand;
-                        $session_vars['bs_rendar_businessEmail'] = $client->client_business_email;
-                        $session_vars['bs_rendar_businessOfficeAddress'] = $client->client_business_office_address;
-                        $session_vars['bs_rendar_serviceSubPlan'] = $client->client_service_sub_plan;
-                        $session_vars['bs_rendar_serviceCategory'] = $client->client_servcie_category;
-                        $session_vars['bs_rendar_serviceType'] = $client->client_service_type;
-                        $session_vars['bs_rendar_registeredOn'] = $client->created_at;
-                        $session_vars['bs_rendar_durationStayed'] = $client->created_at;
-                        $session_vars['bs_rendar_ranking'] = $client->client_ranking;
-
-                        // init session
-                        $this->BS_Ses->set($session_vars);
-
-                        if ($this->BS_Ses->bs_rendar_isActive) {
-                            $this->BS_Response->send_json_response('LoggedIn! Redirecting to dashboard.', true, false, true, base_url());
-                        } else {
-                            $this->BS_Response->send_json_response('<span class="text-danger">Unable to proccess your session. Please contact ' . mailto('support@bitmoservice.com', 'Support') . ' concerning this error for more info.</span>', false, true);
-                        }
-                    /**[END: CLIENT SESSION] */
                     
                 }
             } else {

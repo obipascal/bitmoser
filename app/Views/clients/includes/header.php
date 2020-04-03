@@ -31,7 +31,7 @@
     <link rel="stylesheet" href="<?= base_url();?>/clientAssets/assets/css/Table-With-Search-1.css?h=604cb4e2e523f88e3270d5f1dbcb81fa">
     <link rel="stylesheet" href="<?= base_url();?>/clientAssets/assets/css/Table-With-Search.css?h=151c14cfaa5080353ec48ad9f843c0b4">
     <!-- Site Icon -->
-    <link rel="shortcut icon" type="image/png" href="<?= base_url();?>/favicon.png"/>
+    <link rel="shortcut icon" type="image/png" href="<?= base_url();?>/favicon.ico"/>
     <!-- ./Site Icon -->
 
     <!-- FineUploader style -->

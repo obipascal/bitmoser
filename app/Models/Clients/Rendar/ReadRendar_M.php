@@ -1,5 +1,5 @@
 <?php
-namespace App\Models\Rendar;
+namespace App\Models\Clients\Rendar;
 
 use CodeIgniter\Model;
 
@@ -69,7 +69,7 @@ class ReadRendar_M extends Model
         {   //retrieve the client provided the id is valid
             $client= $this->find($id);
             //check if there is a clientwith given id
-            if(!empty($user))
+            if(!empty($client))
             {
                 $loginInfo['last_login'] = $client->client_last_loggedin;
                 $loginInfo['first_login'] = $client->client_first_loggedin;

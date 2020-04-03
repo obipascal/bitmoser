@@ -1,5 +1,5 @@
 <?php
-namespace App\Models\Rendar;
+namespace App\Models\Clients\Rendar;
 
 use CodeIgniter\Model;
 
@@ -34,12 +34,15 @@ class Write_Rendar_M extends Model
         'client_reg_date',
         'client_elapse_duration',
         'client_ranking',
+        'client_last_loggedin',
+        'client_first_loggedin',
+        'client_loggedin_count',
         'created_at',
         'updated_at',
         'deleted_at'
     ];
     /** [model return type: Use the Entity of this model to make things easier t manipulate] */
-    protected $returnType = 'App\Entities\Remdar_E';
+    protected $returnType = 'App\Entities\Clients\Rendar_E';
     /** [weither the model table uses a timestamps: default true cause there special columns names using the timespams] */
     protected $useTimestamps = true;
     /**[during model update(database insertion): this are the validation rule required before data is inserted into model.] */

@@ -67,11 +67,11 @@
 						data-toggle="dropdown" aria-expanded="false" href="#"><img
 							class="rounded-circle"
 							src="<?=base_url();?>/clientAssets/assets/img/fb-id.jpg?h=15e214ee10342db66a416e821fbed12a"
-							style="width: 45px;">&nbsp;Welcome <strong><?=isset($profileName) ? $profileName : 'Obi, Pascal';?>,&nbsp;</strong><strong
-							class="text-warning">ID: <?=isset($ID) ? $ID : '1342422342';?></strong></a>
+							style="width: 45px;">&nbsp;<small class="text-info"><?= isset($firstLogin) && $firstLogin ? 'Welcome!' : 'Welcome back!';?></small> <strong class="text-light"><?=isset($profileName) ? $profileName : 'Obi, Pascal';?>,&nbsp;</strong><strong
+							class="text-warning">ID: <?= isset($ID) ? $ID : '1342422342';?></strong></a>
 						<div role="menu" class="dropdown-menu dropdown-menu-right dsh-user-dropdown">
 							<h6 role="presentation" class="dropdown-header text-muted"
-								style="font-size: x-small;">Last login </h6>
+								style="font-size: x-small;">Last login <?= isset($lastLogin) ? $lastLogin : '';?> </h6>
 							<div role="presentation" class="dropdown-divider"></div>
 							<a role="presentation" href="account/view.html"
 								class="dropdown-item bs-color"><i class="far fa-user-circle"></i> Profile</a><a
@@ -80,7 +80,7 @@
 							<a role="presentation" href="#" class="dropdown-item bs-color"><i
 								class="fas fa-wallet"></i><strong> Wallet</strong></a>
 							<div role="presentation" class="dropdown-divider"></div>
-							<a role="presentation" href="#"
+							<a role="presentation" href="<?= base_url('/dash/ng/rendar/board?logout=true');?>"
 								class="dropdown-item text-danger bs-color"><i
 								class="fas fa-user-lock"></i> Logout</a>
 						</div>

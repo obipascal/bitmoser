@@ -831,13 +831,26 @@ class BS_Assist
      */
     public function bs_parseDateTime()
     {
-        $now = Time::parse('Africa/Lagos');
-        $date = $now->toLocalizedString('MMM d, yyyy');
-        $time = date('H:i:sa');
+        $date = date('F j, Y') .' '. date('h') . ':' . date('i'). ':' . date('sa');
+        // $evalTime = Time::parse('April 2, 2020 09:45:56pm', 'Africa/Lagos', 'en_GB');
+        // var_dump($evalTime->getDay()); //$evalTime->humanize()
 
-        $dateTime = Time::parse($date .' '. $time, 'Africa/Lagos');
+        //return a well formatted date to be used by parse() ci datetime func
+        return $date;
 
-        return $dateTime;
+        //--tobe used when need
+
+        // date
+        // $y = (int)date('Y');
+        // $m = (int)date('m');
+        // $d = (int)date('d');
+        // // time
+        // $h = (int)date('H');
+        // $min =(int)date('i');
+        // $s = (int)date('s');
+        // $today = Time::create($y, $m, $d, $h, $min, $s,'Africa/Lagos', 'en_US');
+        // $now = Time::parse($today);
+        // $time = $now->toLocalizedString();
     }
 
     /**

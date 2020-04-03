@@ -89,7 +89,7 @@ class API_Authentication extends BaseController
                 $serviceType = explode(': ', $FormInputs['client_service_category'])[1]; //type
 
                 //Generate the client login details to be emailed and displayed to the client
-                $profile_id = random_string('numberic', 11);
+                $profile_id = random_string('numberic',8);
                 $profile_pswrd = random_string('alnum', 8);
                 //rewrite the index client_service_category => value
                 
@@ -121,6 +121,7 @@ class API_Authentication extends BaseController
                             <span class="text-info"><strong>Profile ID: </strong> ' . $profile_id . '</span><br/>
                             <span class="text-info"><strong>Login Password: </strong> ' . $profile_pswrd . '</span><br/>
                             <span class=" bs-color-code"><strong>NOTE:</strong> Your Login Information has also been sent to your provided email, you can change your password anytime after your first login.</span>
+                            <a href="'.base_url('/dash/ng/rendar/board').'" role="button" class="btn btn-sm btn-success">I Have Copied My login Infomation</a>
                         </div>
                         ',
                         true,

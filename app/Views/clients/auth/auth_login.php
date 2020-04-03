@@ -16,18 +16,23 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bree+Serif&amp;subset=latin-ext">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cantata+One&amp;subset=latin-ext">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Copse">
-    <link rel="stylesheet" href="<?= base_url();?>/clientAssets/assets/css/bs-dsh-media.css?h=09766d7c0ee3233503df4c9ea00e07af">
-    <link rel="stylesheet" href="<?= base_url();?>/clientAssets/assets/css/modal-dailog/ibox.css?h=c9f2927f4495ff0146d0ab474803fb2f">
+    <link rel="stylesheet"
+        href="<?= base_url();?>/clientAssets/assets/css/bs-dsh-media.css?h=09766d7c0ee3233503df4c9ea00e07af">
+    <link rel="stylesheet"
+        href="<?= base_url();?>/clientAssets/assets/css/modal-dailog/ibox.css?h=c9f2927f4495ff0146d0ab474803fb2f">
     <link rel="stylesheet"
         href="<?= base_url();?>/clientAssets/assets/css/modal-dailog/infobox.css?h=2f8586e0e9d77d99be1d55fe82ad8167">
     <link rel="stylesheet"
         href="<?= base_url();?>/clientAssets/assets/css/Google-Style-Login.css?h=857edb71cfc135683f2a1788dc6dcd99">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
-    <link rel="stylesheet" href="<?= base_url();?>/clientAssets/assets/css/loader.min.css?h=380c56e785f00b4b744f1b48d5aaa1e9">
-    <link rel="stylesheet" href="<?= base_url();?>/clientAssets/assets/css/styles.css?h=164f77d159ab5814e0a831cd83a4ef55">
+    <link rel="stylesheet"
+        href="<?= base_url();?>/clientAssets/assets/css/loader.min.css?h=380c56e785f00b4b744f1b48d5aaa1e9">
+    <link rel="stylesheet"
+        href="<?= base_url();?>/clientAssets/assets/css/styles.css?h=164f77d159ab5814e0a831cd83a4ef55">
     <link rel="stylesheet"
         href="<?= base_url();?>/clientAssets/assets/css/Table-With-Search-1.css?h=604cb4e2e523f88e3270d5f1dbcb81fa">
-    <link rel="stylesheet" href="<?= base_url();?>/clientAssets/assets/css/Table-With-Search.css?h=151c14cfaa5080353ec48ad9f843c0b4">
+    <link rel="stylesheet"
+        href="<?= base_url();?>/clientAssets/assets/css/Table-With-Search.css?h=151c14cfaa5080353ec48ad9f843c0b4">
     <!-- Site Icon -->
     <link rel="shortcut icon" type="image/png" href="<?= base_url();?>/favicon.ico" />
 </head>
@@ -38,14 +43,17 @@
             src="<?= base_url();?>/clientAssets/assets/img/bs-logo-white.jpeg?h=3d6e03d5257f0d5efbef470f4c2a4e42">
         <p class="profile-name-card"> </p>
         <form id="auth_client_signin" class="auth_client_signin">
-            <span class="reauth-email"> </span>
+            <div class="reauth-email"> </div>
+
             <!-- User ID -->
             <input class="border rounded-0 border-info form-control" type="text" name="auth_client_id" required=""
-                placeholder="ID: 1830239423" value="<?= isset($_SESSION['bs_rendar_isActive']) ? $_SESSION['bs_rendar_publicID']: '';?>" pattern="[0-9]+[^A-Za-z_%$@~#-+',*]" id="authClientID">
-            <br/>
+                placeholder="ID: 1830239423"
+                value="<?= isset($_SESSION['bs_rendar_isActive']) ? $_SESSION['bs_rendar_publicID']: '';?>"
+                pattern="[0-9]+[^A-Za-z_%$@~#-+',*]" id="authClientID">
+            <br />
             <!-- Password -->
-            <input class="border rounded-0 border-info form-control" style="text-transform: none" type="password" name="auth_client_security_key"
-                required="" placeholder="Password" id="authClientSecKey">
+            <input class="border rounded-0 border-info form-control" style="text-transform: none" type="password"
+                name="auth_client_security_key" required="" placeholder="Password" id="authClientSecKey">
             <!-- <div class="checkbox">
                 <div class="form-check">
                     <input class="form-check-input" type="checkbox" id="formCheck-1"><label
@@ -53,7 +61,7 @@
                     </div>
             </div> -->
             <!-- br -->
-            <br/>
+            <br />
             <button class="btn btn-primary btn-block btn-lg btn-signin" type="submit"
                 style="background-color: #464e6c;">Sign in</button>
         </form><a href="#" class="forgot-password">Forgot your password?</a>
@@ -69,25 +77,46 @@
         </div>
     </footer>
     <script src="<?= base_url();?>/clientAssets/assets/js/jquery.min.js?h=1dd785e1de9a32e236b624ae268bb803"></script>
-    <script src="<?= base_url();?>/clientAssets/assets/bootstrap/js/bootstrap.min.js?h=2394c9ffd5558f411ffdc3326e9a8962"></script>
-    <!-- BS Xhr Modul -->
-    <script src="<?= base_url();?>/clientAssets/assets/js/BSXhrRequest.min.js"></script>
-    <!-- ./BS Xhr Module -->
-    <!-- <script src="<?= base_url();?>/clientAssets/assets/js/bsModals/BSModalBox.j/s?h=0bd64b1e571d34f2972b7ad5fff43d2b"></script> -->
-    <script src="<?= base_url();?>/clientAssets/assets/js/checkpassword-strenght.js?h=e71756e3620bdef83aae01f19d3c2e75"></script>
-    <script src="<?= base_url();?>/clientAssets/assets/js/media/bs-dsh-media.js?h=8718b7ee45a84a98423536f0906f03f2"></script>
-    <script src="<?= base_url();?>/clientAssets/assets/js/modal-dailog/ibox.js?h=1fcbdbae208e2d19ae41700c853516c4"></script>
-    <script src="<?= base_url();?>/clientAssets/assets/js/modal-dailog/infobox.js?h=9022c15d307bf83d64d0ff808da73b8a"></script>
-    <script src="<?= base_url();?>/clientAssets/assets/js/request/bs.confirm.request.js?h=f0487fc8b35861824666ea31210f3214"></script>
-    <script src="<?= base_url();?>/clientAssets/assets/js/request/bs.rq.md.checkbox.js?h=07da548946826279d962409b7e95b399"></script>
-    <script src="<?= base_url();?>/clientAssets/assets/js/request/bs.rq.md.open.close.js?h=d06b6fc885cb92761783b24f16c8f95f">
+    <script
+        src="<?= base_url();?>/clientAssets/assets/bootstrap/js/bootstrap.min.js?h=2394c9ffd5558f411ffdc3326e9a8962">
     </script>
-    <script src="<?= base_url();?>/clientAssets/assets/js/services/bs.htmlparser.min.js?h=be8917ba9f3af231750a5b4eb10573b8"></script>
-    <script src="<?= base_url();?>/clientAssets/assets/js/services/form.field.table.js?h=7c96bc2142567c61330f7e474bcc2233"></script>
-    <script src="<?= base_url();?>/clientAssets/assets/js/services/update.price.tag.js?h=6fdf7318b86c2b35ce2ce138c9302732"></script>
-    <script src="<?= base_url();?>/clientAssets/assets/js/simplify.request.service.min.js?h=413c4d238e384382996e2f5eed283d9b">
+    <!-- BS Js library -->
+    <script src="<?= base_url();?>/globalAssets/js/bitmoser.min.js"></script>
+    <!-- ./BS Js library -->
+    <!-- Dashboard auth js -->
+    <script src="<?= base_url();?>/clientAssets/assets/js/request/rq.dash.auth.js"></script>
+    <!-- ./Dashboard auth js -->
+    <script src="<?= base_url();?>/clientAssets/assets/js/checkpassword-strenght.js?h=e71756e3620bdef83aae01f19d3c2e75">
     </script>
-    <script src="<?= base_url();?>/clientAssets/assets/js/Table-With-Search.js?h=aeb9a0ac8b6cc9ec2e3b9cc3add2f239"></script>
+    <script src="<?= base_url();?>/clientAssets/assets/js/media/bs-dsh-media.js?h=8718b7ee45a84a98423536f0906f03f2">
+    </script>
+    <script src="<?= base_url();?>/clientAssets/assets/js/modal-dailog/ibox.js?h=1fcbdbae208e2d19ae41700c853516c4">
+    </script>
+    <script src="<?= base_url();?>/clientAssets/assets/js/modal-dailog/infobox.js?h=9022c15d307bf83d64d0ff808da73b8a">
+    </script>
+    <script
+        src="<?= base_url();?>/clientAssets/assets/js/request/bs.confirm.request.js?h=f0487fc8b35861824666ea31210f3214">
+    </script>
+    <script
+        src="<?= base_url();?>/clientAssets/assets/js/request/bs.rq.md.checkbox.js?h=07da548946826279d962409b7e95b399">
+    </script>
+    <script
+        src="<?= base_url();?>/clientAssets/assets/js/request/bs.rq.md.open.close.js?h=d06b6fc885cb92761783b24f16c8f95f">
+    </script>
+    <script
+        src="<?= base_url();?>/clientAssets/assets/js/services/bs.htmlparser.min.js?h=be8917ba9f3af231750a5b4eb10573b8">
+    </script>
+    <script
+        src="<?= base_url();?>/clientAssets/assets/js/services/form.field.table.js?h=7c96bc2142567c61330f7e474bcc2233">
+    </script>
+    <script
+        src="<?= base_url();?>/clientAssets/assets/js/services/update.price.tag.js?h=6fdf7318b86c2b35ce2ce138c9302732">
+    </script>
+    <script
+        src="<?= base_url();?>/clientAssets/assets/js/simplify.request.service.min.js?h=413c4d238e384382996e2f5eed283d9b">
+    </script>
+    <script src="<?= base_url();?>/clientAssets/assets/js/Table-With-Search.js?h=aeb9a0ac8b6cc9ec2e3b9cc3add2f239">
+    </script>
 
     <!-- Authentication -->
     <script src="<?= base_url();?>/clientAssets/assets/js/request/bs.rq.authentication.js"></script>
