@@ -39,6 +39,9 @@
 <!-- Dashboard auth js -->
 <script src="<?= base_url();?>/clientAssets/assets/js/request/rq.dash.auth.js"></script>
 <!-- ./Dashboard auth js -->
+<!-- BS Js Dashboard manipulator -->
+<script src="<?= base_url();?>/clientAssets/assets/js/request/rq.dash.main.js"></script> 
+<!-- ./BS Js Dashboard manipulator -->
 <script src="<?= base_url();?>/clientAssets/assets/js/bsModals/BSModalBox.js?h=0bd64b1e571d34f2972b7ad5fff43d2b">
 </script>
 <script src="<?= base_url();?>/clientAssets/assets/js/checkpassword-strenght.js?h=e71756e3620bdef83aae01f19d3c2e75">

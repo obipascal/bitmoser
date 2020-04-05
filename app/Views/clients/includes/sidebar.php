@@ -7,15 +7,18 @@
  -->
 
 <!-- Start: App Mian Content -->
-<section style="margin-top: 5rem !important;">
+<section >
 	<div class="row no-gutters">
 		<!-- Start: Sidebar -->
 		<div class="col-md-2 col-lg-2 col-xl-2">
 			<div class="shadow bs-bg bs-dsh-sidebar bs-sidebar-left">
-				<button class="close text-light close-dsh-sidebar">
-					<span aria-hidden="true">×</span>
-				</button>
-				<ul class="nav nav-tabs flex-column bs-dsh-sidebar-nav">
+				
+				<ul class="nav nav-tabs flex-column bs-dsh-sidebar-nav " style="margin-top:6rem !important">
+					<li class="nav-item text-center bs-dsh-sidebar-item close-dsh-sidebar">
+						<button class="close close-dsh-sidebar bs-color bs-color-code" style="position:relative; left:50px; color:rgb(70, 75, 108); top:5px;">
+							<span aria-hidden="true">×</span>
+						</button>
+					</li>
 					<li class="nav-item text-center bs-dsh-sidebar-item"><a
 						class="nav-link bs-dsh-sidebar-links bs-f-bold <?= isset($active) && $active === 'board' ? 'current-tab' : '';?>"
 						href="<?= base_url('/dash/ng/rendar/board');?>"><i
@@ -42,6 +45,7 @@
 							class="far fa-user-circle bs-fa-2 bs-fa-mutted"
 							style="color: #8c60c1;"></i>&nbsp;Account</a></li>
 				</ul>
+				
 			</div>
 		</div>
 		<!-- End: Sidebar -->

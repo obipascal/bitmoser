@@ -58,23 +58,29 @@ $routes->group('api', function($routes){
 
 	//---[Dashboard:= client]---
 	$routes->post('dash/auth/login', 'Clients\API\Authentication::handleLoginForm');
+	$routes->post('files/up/clients/avatar', 'Clients\API\FileUploader::uploadClientAvatar');
 	//---[Dashboard:= ./client]---
 });
 /** [END] */
 
 //------[DASHBOARD]------
 
-
+/** [Dashboard Routes] */
 $routes->group('dash', function($routes){
 //---[clients]---
-	$routes->get('ng/rendar/board', 'Clients\Dashboard::index');
-	$routes->get('ng/rendar/services', 'Clients\Dashboard::services');
-	$routes->get('ng/rendar/request', 'Clients\Dashboard::request');
-	$routes->get('ng/rendar/ewallet', 'Clients\Dashboard::wallet');
-	$routes->get('ng/rendar/account', 'Clients\Dashboard::account');
+	$routes->get('ng/rendar/board', 'Clients\Dashboard::index');//Dashboard
+	$routes->get('ng/rendar/services', 'Clients\Dashboard::services');//Service
+	$routes->get('ng/rendar/request', 'Clients\Dashboard::request');//Request
+	$routes->get('ng/rendar/ewallet', 'Clients\Dashboard::wallet');//Wallet
+	$routes->get('ng/rendar/account', 'Clients\Dashboard::account');//Account
+	$routes->get('ng/rendar/notify/(:alphanum)', 'Clients\Dashboard::notification');//Notification
+	$routes->post('ng/rendar/status/lslg', 'Clients\Dashboard::lastLogin');//LastLogin
 //---[./client]---
 	
 });
+
+
+
 
 
 //------[./DASHBOARD]------

@@ -12,6 +12,10 @@ class Dashboard extends BaseController
      * Personal assistant instance
      */
     protected $PA;
+    /**
+     * HTTP Response instance
+     */
+    protected $Response;
 
     /**
      * Session instance
@@ -31,6 +35,7 @@ class Dashboard extends BaseController
         $this->PA = \Config\Services::assistant();
         $this->BS_SES = \Config\Services::session();
         $this->BS_Rendar = \Config\Services::bs_rendar();
+        $this->Response = \Config\Services::bs_http_response();
 
         // $this->BS_SES->destroy();
 
@@ -61,6 +66,8 @@ class Dashboard extends BaseController
                 // Navbar user info
                 $navBar['ID'] = $this->BS_SES->bs_rendar_publicID;
                 $navBar['profileName'] = $this->BS_SES->bs_rendar_firstName;
+                $navBar['gender'] = $this->BS_SES->bs_rendar_gender;
+                $navBar['avatar'] = $this->BS_SES->bs_rendar_avatar;
 
                 //sidebar
                 $sideBar['active'] = 'board';
@@ -147,7 +154,8 @@ class Dashboard extends BaseController
                 // Navbar user info
                 $navBar['ID'] = $this->BS_SES->bs_rendar_publicID;
                 $navBar['profileName'] = $this->BS_SES->bs_rendar_firstName;
-
+                $navBar['gender'] = $this->BS_SES->bs_rendar_gender;
+                $navBar['avatar'] = $this->BS_SES->bs_rendar_avatar;
                 //sidebar
                 $sideBar['active'] = 'services';
 
@@ -234,7 +242,8 @@ class Dashboard extends BaseController
                         // Navbar user info
                         $navBar['ID'] = $this->BS_SES->bs_rendar_publicID;
                         $navBar['profileName'] = $this->BS_SES->bs_rendar_firstName;
-
+                        $navBar['gender'] = $this->BS_SES->bs_rendar_gender;
+                        $navBar['avatar'] = $this->BS_SES->bs_rendar_avatar;
                         //sidebar
                         $sideBar['active'] = 'request';
 
@@ -291,7 +300,8 @@ class Dashboard extends BaseController
                         // Navbar user info
                         $navBar['ID'] = $this->BS_SES->bs_rendar_publicID;
                         $navBar['profileName'] = $this->BS_SES->bs_rendar_firstName;
-
+                        $navBar['gender'] = $this->BS_SES->bs_rendar_gender;
+                        $navBar['avatar'] = $this->BS_SES->bs_rendar_avatar;
                         //sidebar
                         $sideBar['active'] = 'request';
 
@@ -349,7 +359,8 @@ class Dashboard extends BaseController
                         // Navbar user info
                         $navBar['ID'] = $this->BS_SES->bs_rendar_publicID;
                         $navBar['profileName'] = $this->BS_SES->bs_rendar_firstName;
-
+                        $navBar['gender'] = $this->BS_SES->bs_rendar_gender;
+                        $navBar['avatar'] = $this->BS_SES->bs_rendar_avatar;
                         //sidebar
                         $sideBar['active'] = 'request';
 
@@ -436,7 +447,8 @@ class Dashboard extends BaseController
                         // Navbar user info
                         $navBar['ID'] = $this->BS_SES->bs_rendar_publicID;
                         $navBar['profileName'] = $this->BS_SES->bs_rendar_firstName;
-
+                        $navBar['gender'] = $this->BS_SES->bs_rendar_gender;
+                        $navBar['avatar'] = $this->BS_SES->bs_rendar_avatar;
                         //sidebar
                         $sideBar['active'] = 'wallet';
 
@@ -492,7 +504,8 @@ class Dashboard extends BaseController
                         // Navbar user info
                         $navBar['ID'] = $this->BS_SES->bs_rendar_publicID;
                         $navBar['profileName'] = $this->BS_SES->bs_rendar_firstName;
-
+                        $navBar['gender'] = $this->BS_SES->bs_rendar_gender;
+                        $navBar['avatar'] = $this->BS_SES->bs_rendar_avatar;
                         //sidebar
                         $sideBar['active'] = 'wallet';
 
@@ -548,7 +561,8 @@ class Dashboard extends BaseController
                         // Navbar user info
                         $navBar['ID'] = $this->BS_SES->bs_rendar_publicID;
                         $navBar['profileName'] = $this->BS_SES->bs_rendar_firstName;
-
+                        $navBar['gender'] = $this->BS_SES->bs_rendar_gender;
+                        $navBar['avatar'] = $this->BS_SES->bs_rendar_avatar;
                         //sidebar
                         $sideBar['active'] = 'wallet';
 
@@ -605,7 +619,8 @@ class Dashboard extends BaseController
                         // Navbar user info
                         $navBar['ID'] = $this->BS_SES->bs_rendar_publicID;
                         $navBar['profileName'] = $this->BS_SES->bs_rendar_firstName;
-
+                        $navBar['gender'] = $this->BS_SES->bs_rendar_gender;
+                        $navBar['avatar'] = $this->BS_SES->bs_rendar_avatar;
                         //sidebar
                         $sideBar['active'] = 'wallet';
 
@@ -692,7 +707,8 @@ class Dashboard extends BaseController
                         // Navbar user info
                         $navBar['ID'] = $this->BS_SES->bs_rendar_publicID;
                         $navBar['profileName'] = $this->BS_SES->bs_rendar_firstName;
-
+                        $navBar['gender'] = $this->BS_SES->bs_rendar_gender;
+                        $navBar['avatar'] = $this->BS_SES->bs_rendar_avatar;
                         //sidebar
                         $sideBar['active'] = 'account';
 
@@ -748,7 +764,8 @@ class Dashboard extends BaseController
                         // Navbar user info
                         $navBar['ID'] = $this->BS_SES->bs_rendar_publicID;
                         $navBar['profileName'] = $this->BS_SES->bs_rendar_firstName;
-
+                        $navBar['gender'] = $this->BS_SES->bs_rendar_gender;
+                        $navBar['avatar'] = $this->BS_SES->bs_rendar_avatar;
                         //sidebar
                         $sideBar['active'] = 'account';
 
@@ -805,7 +822,8 @@ class Dashboard extends BaseController
                         // Navbar user info
                         $navBar['ID'] = $this->BS_SES->bs_rendar_publicID;
                         $navBar['profileName'] = $this->BS_SES->bs_rendar_firstName;
-
+                        $navBar['gender'] = $this->BS_SES->bs_rendar_gender;
+                        $navBar['avatar'] = $this->BS_SES->bs_rendar_avatar;
                         //sidebar
                         $sideBar['active'] = 'account';
 
@@ -868,6 +886,131 @@ class Dashboard extends BaseController
         }
         else {
            return redirect()->to(base_url().'/dash/ng/rendar/board');
+        }
+    }
+
+    /**
+     * Notification route
+     *
+     * @return void
+     */
+    public function notification()
+    {
+        //make sure rendar is login 
+        if($this->BS_SES->bs_rendar_isActive)
+        {
+            
+            if(is_null($this->request->getGet('logout')))
+            {
+                // title bar
+                $header['title'] = $this->BS_SES->bs_rendar_firstName . ' > Notification > Inbox';
+
+                // Navbar user info
+                $navBar['ID'] = $this->BS_SES->bs_rendar_publicID;
+                $navBar['profileName'] = $this->BS_SES->bs_rendar_firstName;
+                $navBar['gender'] = $this->BS_SES->bs_rendar_gender;
+                $navBar['avatar'] = $this->BS_SES->bs_rendar_avatar;
+                //sidebar
+                $sideBar['active'] = '';
+
+                //footer
+                $footer['scripts'] = '';
+                
+                //resolve first login message and last login  on dashboard
+                $firstLogin = $this->BS_SES->bs_rendar_first_loggedin;
+                $loginCount = $this->BS_SES->bs_rendar_loggedin_count;
+                $lastLogin = $this->BS_SES->bs_rendar_last_loggedin;            
+                
+                if(!(empty($firstLogin) && empty($loginCount) && is_null($firstLogin) && is_null($loginCount)))
+                {
+                    //resovle last login
+                    if($firstLogin && (int)$loginCount === 0)
+                    {
+                        
+                        $navBar['firstLogin'] = true;
+
+                    }
+                    else
+                    {
+                        $navBar['firstLogin'] = false;
+                    }
+                }
+                else
+                {
+                    $footer['scripts'] = '<script> BS.alert({title: "Error Retrieving client data", body: "Unable to parse client information", type: "danger"});</script>';
+                }
+                
+                //resovle the last login
+                if(!(empty($lastLogin) && is_null($lastLogin)))
+                {
+                    $lastlog = Time::parse($lastLogin, 'Africa/Lagos', 'en_GB');
+                    $humaniz = $lastlog->humanize();
+
+                    $navBar['lastLogin'] = $humaniz;
+                }
+
+                /** [The view] */
+                                
+                    echo view('clients/includes/header', $header);
+                    echo view('clients/includes/navbar', $navBar);
+                    echo view('clients/includes/sidebar', $sideBar);
+                    echo view('clients/notifications');
+                    echo view('clients/includes/footer', $footer);
+                /** [End] */
+            }
+            else
+            {
+                //logout user
+                $this->BS_SES->destroy();
+
+                return redirect()->to(base_url().'/dash/ng/rendar/board');
+
+            }
+             
+        }
+        else {
+           return redirect()->to(base_url().'/dash/ng/rendar/board');
+        }
+    }
+
+    /**
+     * Update the last login status of the rendar.
+     *
+     * @return void
+     */
+    public function lastLogin(){
+
+        if($this->request->isAJAX())
+        {
+            //make sure rendar is login 
+            if ($this->BS_SES->bs_rendar_isActive)
+            {
+                $lastLogin = $this->BS_SES->bs_rendar_last_loggedin;
+                //resovle the last login
+                if(!(empty($lastLogin) && is_null($lastLogin)))
+                {
+                    $lastlog = Time::parse($lastLogin, 'Africa/Lagos', 'en_GB');
+                    $humaniz = $lastlog->humanize();
+
+                    //return the last login status
+                    $this->Response->send_json_response($humaniz, true, false);
+                }
+                else
+                {
+                    //return and error
+                    $this->Response->send_json_response('Invalid Last login date!', false, true);
+                }
+            }
+            else
+            {   //goto login
+                redirect()->to(base_url().'/dash/ng/rendar/board');
+            }
+        }
+        else
+        {
+            
+            //response with a invlid request 
+            $this->Response->send_json_response('Invalid Request Type', false, true);
         }
     }
 

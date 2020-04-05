@@ -32,8 +32,8 @@
                                 <div class="row no-gutters">
                                     <div class="col-xl-3">
                                         <!-- Start: Client Avatar -->
-                                        <div class="client-avatar mb-2" align="center"><img
-                                                class="rounded-circle img-fluid border border-info shadow-sm w-50"
+                                        <div class="client-avatar mb-2" align="center">
+                                            <img class="rounded-circle img-fluid border border-info shadow-sm w-50 bs_updateAvatarPreview"
                                                 src="<?= base_url();?>/clientAssets/assets/img/avatar_2x.png?h=7cc9532df578bb0171ffee4fd19b3b83">
                                             <p class="mt-2"><strong>Preview Profile Picture</strong></p>
                                         </div>
@@ -41,9 +41,12 @@
                                     </div>
                                     <div class="col">
                                         <!-- Start: Client Info heighlight -->
-                                        <div class="ml-2 bs_updateProfileAvatar" align="center">
-                                            <h3 class="text-center text-muted bs-color mt-2" style="font-family: 'Cantata One', serif;">Drag an drop here</h3>
-                                            <small class="form-text text-muted">Help text for a form field.</small>
+                                        <div class="ml-2" align="center">
+                                            <!-- <h3 class="text-center text-muted bs-color mt-2" style="font-family: 'Cantata One', serif;">Drag and drop</h3>
+                                             -->
+                                            <!--Start: File Uploader form -->
+                                            <div class="text-left bs_updateProfileAvatar"></div>
+                                            <!--End: File Uploader form -->
 
                                             
                                         </div>

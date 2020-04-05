@@ -31,9 +31,9 @@ class BS_JSONResponse
      * @param string $header The http header response content type.
      * @return void
      */
-    public function send_json_uploadfile_response(string $response, $s = false, $e = false, $rt = false, string $header = 'text/plain')
+    public function send_json_uploadfile_response(string $response, $s = false, $e = false, $rt = false, $r = false, string $loc = null, string $header = 'text/plain')
     {
         header('Content-Type: ' . $header . '');
-        echo json_encode(['response' => $response, 'success' => $s, 'error' => $e, 'preventRetry' => $rt]);
+        echo json_encode(['response' => $response, 'success' => $s, 'error' => $e, 'preventRetry' => $rt, 'redirect' => $r, 'location' => $loc]);
     }
 }

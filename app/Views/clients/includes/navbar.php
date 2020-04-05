@@ -7,12 +7,12 @@
 
 <!-- Start: App Header -->
 <header class="text-light"
-	style="background: rgb(70, 78, 108); color: white;">
+	style="background: rgb(70, 78, 108); color: white; margin-bottom:0rem;">
 	<!-- Start: Navbar -->
-	<nav class="navbar navbar-dark navbar-expand-md fixed-top"
-		style="background-color: #464e6c;">
-		<div class="container-fluid">
-			<a class="navbar-brand" href="#"><img
+	<nav class="navbar navbar-dark navbar-expand-md"
+		style="background-color: #464e6c; z-index:100">
+		<div class="container-fluid" >
+			<a class="navbar-brand" href="#">	<img
 				src="<?=base_url();?>/clientAssets/assets/img/bitmoser_logo.png?h=dcfb26295dec07c0bc85de44c036119e"></a>
 			<button class="navbar-toggler" data-toggle="collapse"
 				data-target="#navcol-1">
@@ -38,8 +38,11 @@
 								<strong>Notifications</strong>
 							</h6>
 							<div class="dropdown-divider" role="presentation"></div>
-							<a class="dropdown-item text-muted" role="presentation" href="#">First
-								item</a><a class="dropdown-item text-muted" role="presentation"
+							<a class="dropdown-item text-muted" role="presentation" href="<?= base_url('/dash/ng/rendar/notify/lsdlIdslSE12')?>">
+								Test Notification
+								<small class="text-muted" style="display: block; font-size:11px;">sent 2:50 pm</small>
+							</a>
+							<a class="dropdown-item text-muted" role="presentation"
 								href="#">Second Item</a><a class="dropdown-item text-muted"
 								role="presentation" href="#">Third Item</a>
 							<div class="dropdown-divider" role="presentation"></div>
@@ -65,15 +68,31 @@
 					<a
 						class="dropdown-toggle nav-link border rounded-0 border-warning shadow bs-f-bold"
 						data-toggle="dropdown" aria-expanded="false" href="#"><img
-							class="rounded-circle"
-							src="<?=base_url();?>/clientAssets/assets/img/fb-id.jpg?h=15e214ee10342db66a416e821fbed12a"
+							class="rounded-circle bs_updateAvatarPreview"
+							src="<?php
+								$fp = '/frontendUploads/avatars/clients/';
+								if(isset($avatar))
+								{
+									echo base_url().$fp.$avatar;
+								}
+								else
+								{
+									if($gender === 'male' || $gender === 'Male'){
+										echo base_url().'/globalAssets/img/male.png';
+									}
+									elseif($gender === 'female' || $gender === 'Female')
+									{
+										echo base_url().'/globalAssets/img/female.png';
+									}
+								}
+							?>"
 							style="width: 45px;">&nbsp;<small class="text-info"><?= isset($firstLogin) && $firstLogin ? 'Welcome!' : 'Welcome back!';?></small> <strong class="text-light"><?=isset($profileName) ? $profileName : 'Obi, Pascal';?>,&nbsp;</strong><strong
 							class="text-warning">ID: <?= isset($ID) ? $ID : '1342422342';?></strong></a>
 						<div role="menu" class="dropdown-menu dropdown-menu-right dsh-user-dropdown">
 							<h6 role="presentation" class="dropdown-header text-muted"
-								style="font-size: x-small;">Last login <?= isset($lastLogin) ? $lastLogin : '';?> </h6>
+								style="font-size: x-small;">Last login <span class="bs_rendarLastLogin ml-1"><?= isset($lastLogin) ? $lastLogin : '';?></span> </h6>
 							<div role="presentation" class="dropdown-divider"></div>
-							<a role="presentation" href="<?= base_url('/dash/ng/rendar/account?view=settings');?>"
+							<a role="presentation" href="<?= base_url('/dash/ng/rendar/account?view=account');?>"
 								class="dropdown-item bs-color"><i class="far fa-user-circle"></i> Profile</a><a
 								role="presentation" href="<?= base_url('/dash/ng/rendar/account?view=settings');?>"
 								class="dropdown-item bs-color"><i class="fa fa-gears"></i><strong> Settings</strong></a>

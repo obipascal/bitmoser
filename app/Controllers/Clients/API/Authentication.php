@@ -17,6 +17,8 @@ class Authentication extends BaseController
     protected $BS_RendarEntity;
 
     protected $PA;
+    /** Read client avatar model */
+    protected $ReadClientFileModel;
 
     public function __construct()
     {
@@ -25,6 +27,7 @@ class Authentication extends BaseController
         $this->BS_RendarEntity = new \App\Entities\Clients\Rendar_E();
         $this->BS_ReadRendarModal = new \App\Models\Clients\Rendar\ReadRendar_M();
         $this->BS_WriteRendarModal = new \App\Models\Clients\Rendar\Write_Rendar_M();
+        $this->ReadClientFileModel = new \App\Models\FileUpload\Avatar\ReadClientAvatar_M();
         $this->PA = \Config\Services::assistant();
     }
 
@@ -120,6 +123,7 @@ class Authentication extends BaseController
                                 $session_vars['bs_rendar_countryNationality'] = $client->client_country_nationality;
                                 $session_vars['bs_rendar_countryRegion'] = $client->client_country_region;
                                 $session_vars['bs_rendar_occupation'] = $client->client_occupation;
+                                $session_vars['bs_rendar_gender'] = $client->client_gender;
                                 $session_vars['bs_rendar_businessBrand'] = $client->client_business_brand;
                                 $session_vars['bs_rendar_businessEmail'] = $client->client_business_email;
                                 $session_vars['bs_rendar_businessOfficeAddress'] = $client->client_business_office_address;
@@ -132,7 +136,18 @@ class Authentication extends BaseController
                                 $session_vars['bs_rendar_last_loggedin'] = $client->client_last_loggedin;
                                 $session_vars['bs_rendar_first_loggedin'] = $client->client_first_loggedin;
                                 $session_vars['bs_rendar_loggedin_count'] = $client->client_loggedin_count;
-
+                                //get the client avatar if client has already uploads it
+                                $avatar = $this->ReadClientFileModel->clientHasUploadedB4($client->client_profile_id);
+                                if(!empty($avatar) && is_string($avatar))
+                                {
+                                    $session_vars['bs_rendar_avatar'] = $avatar;
+                                }
+                                else
+                                {
+                                    $session_vars['bs_rendar_avatar'] = null;
+                                }
+                                
+                                
                                 // init session
                                 $this->BS_Ses->set($session_vars);
 

@@ -1,20 +1,28 @@
 @media screen and (min-aspect-ratio: 16/9) {
-  .bs-dsh-sidebar {
-  }
+  /* .bs-dsh-sidebar {
+  } */
 }
 
 @media screen and (max-width: 785px) {
   .bs-sidebar-left {
     left: -49%;
     transition: .5s ease-in-out;
-  }
+    -webkit-transition: .5s ease-in-out;
+    -moz-transition: .5s ease-in-out;
+    -ms-transition: .5s ease-in-out;
+    -o-transition: .5s ease-in-out;
+}
 }
 
 @media screen and (max-width: 786px) {
   .bs-sidebar-right {
     left: 0;
     transition: .5s ease-in-out;
-  }
+    -webkit-transition: .5s ease-in-out;
+    -moz-transition: .5s ease-in-out;
+    -ms-transition: .5s ease-in-out;
+    -o-transition: .5s ease-in-out;
+}
 }
 
 @media screen and (min-width: 786px) {
