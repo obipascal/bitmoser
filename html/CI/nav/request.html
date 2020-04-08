@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Request Service - BitmoService</title>
+    <meta name="description" content="Request any kind of service on BitmoService platform for free.">
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css?h=e78c0948805c24bebff6e56371d59a4a">
+    <link rel="stylesheet" href="../assets/fonts/fontawesome-all.min.css">
+    <link rel="stylesheet" href="../assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="../assets/fonts/simple-line-icons.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,80">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,300,700,400italic,300italic,700italic">
+    <link rel="stylesheet" href="../assets/css/-Login-form-Page-BS4-.css?h=8917ed24363311d6deb0e3de10c0c1d1">
+    <link rel="stylesheet" href="../assets/css/best-carousel-slide.css?h=894775746b81faa0596f6e86544b18fe">
+    <link rel="stylesheet" href="../assets/css/bs-media.css?h=d2aa80b8e5c61681bde98c2018dd45e8">
+    <link rel="stylesheet" href="../assets/css/Dashboard-layout-v11-1.css?h=34a9a0635382afb8f3a3b31c880c2074">
+    <link rel="stylesheet" href="../assets/css/Dashboard-layout-v11-2.css?h=5f5b3f6b7652e939290e5c4f00f2147b">
+    <link rel="stylesheet" href="../assets/css/Dashboard-layout-v11.css?h=c2207f6e801cea3be72bf7994f4319fe">
+    <link rel="stylesheet" href="../assets/css/Footer-Clean.css?h=458c2006b29994130bd3924e699b0a87">
+    <link rel="stylesheet" href="../assets/css/Google-Products-Accordion.css?h=ac1c7f11bcbbc0ece1cd067f0e626453">
+    <link rel="stylesheet" href="../assets/css/header-cover.css?h=722f26206dfbe893e1a98c07cabc9144">
+    <link rel="stylesheet" href="../assets/css/Highlight-Phone.css?h=1e148caf0669055c552e910be5621bdf">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="../assets/css/modal-dailog/ibox.css?h=600c0cdfc9f7eef9793b9cc63433a83b">
+    <link rel="stylesheet" href="../assets/css/JLX-Contact-Form-with-Placeholder-FI.css?h=ce9aebdd90d21bd946550f36098c0cd0">
+    <link rel="stylesheet" href="../assets/css/Pretty-User-List.css?h=61e44a021a0e093d333d38caefc43482">
+    <link rel="stylesheet" href="../assets/css/MUSA_product-display.css?h=55699d67c660b9704324266143d1a3c5">
+    <link rel="stylesheet" href="../assets/css/Pricing-table-3.css?h=7257f1cc61081f391ee8aa6a0ba70ebc">
+    <link rel="stylesheet" href="../assets/css/Product-Details.css?h=09351c7d3cb8c7ecdcad9253778ff891">
+    <link rel="stylesheet" href="../assets/css/semantic.min.css?h=c81da5f3a27e18162e966c4debb09aa8">
+    <link rel="stylesheet" href="../assets/css/styles.css?h=f301682eaca4fb322be0f9fee38938bd">
+    <link rel="stylesheet" href="../assets/css/TR-Form.css?h=7278483ef946f2f3520cf6c4401bc625">
+<!-- Start:  Mobile view max-width: 768ox -->
+<link rel="stylesheet" media="(max-width: 768px)" href="bs-media.css" type="text/css" />
+<!-- End:  Mobile view max-width: 768ox -->
+
+<!-- Start:  Mobile view max-width: 507px -->
+ <link rel="stylesheet" media="(max-width: 507px)" href="bs-media.css" type="text/css" />
+<!-- End:  Mobile view max-width: 507px -->
+
+<!-- site - Icon -->
+<link rel="icon" href="logo/fivico.png" sizes="20x20 400x400" type="image/jpg">
+</head>
+
+<body>
+    <main style="background-color: #e7e7e7;">
+        <!-- Start: CI Header -->
+        <header>
+            <nav class="navbar navbar-dark navbar-expand-md sticky-top" style="background-color: rgb(70, 74, 108);">
+                <div class="container-fluid"><a class="navbar-brand w-25" href="../index.html"><img class="img-fluid" src="../assets/img/logo/bs-logo-s.png?h=411f77988f1af39c5af4e6badf5e2176"></a><button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+                    <div
+                        class="collapse navbar-collapse text-capitalize text-white" id="navcol-1" style="width: 1000px;margin-left: 20px;">
+                        <ul class="nav navbar-nav mx-auto bs-nav-tabs">
+                            <li class="nav-item" role="presentation"><a class="nav-link active" href="../index.html" style="font-size: 20px;">Home</a></li>
+                            <li class="nav-item" role="presentation"><a class="nav-link active" href="../nav/request.html" style="font-size: 20px;">&nbsp;services&nbsp;</a></li>
+                            <li class="nav-item" role="presentation"><a class="nav-link" href="../sub/subscription.plans.html" style="font-size: 20px;">Render &nbsp;service</a></li>
+                            <li class="nav-item" role="presentation"><a class="nav-link" href="#" style="font-size: 20px;color: rgba(255,255,255,0.5);">Learn More</a></li>
+                        </ul>
+                        <ul class="nav navbar-nav ml-auto">
+                            <li class="nav-item" role="presentation"><a class="nav-link active border rounded border-warning shadow" href="../bs_auth/auth_login.html" style="color: #eac70e;"><i class="fas fa-user-lock"></i>&nbsp;Login</a></li>
+                            <li class="nav-item" role="presentation"><a class="nav-link active border rounded border-success shadow" href="../bs_auth/auth_signup.html" style="color: #9bdbc1;"><i class="fa fa-user-circle-o"></i>&nbsp; Sign Up</a></li>
+                            <li class="nav-item dropdown"><a class="dropdown-toggle nav-link border rounded-0 border-warning shadow" data-toggle="dropdown" aria-expanded="false" href="#"><img class="rounded-circle img-fluid" src="../assets/img/gravater/user.png?h=25a56d70d87dad0ef06160523bd08873" style="width: 25px;height: 25px;"></a>
+                                <div
+                                    class="dropdown-menu dropdown-menu-right bs-drop-auth-menu" role="menu"><a class="dropdown-item" role="presentation" href="#">Profile</a><a class="dropdown-item" role="presentation" href="#">Settings</a><a class="dropdown-item" role="presentation" href="#">Wallet</a></div>
+                </li>
+                </ul>
+                </div>
+                </div>
+            </nav>
+        </header>
+        <!-- End: CI Header -->
+        <section class="features-boxed" style="color: #464a6c;background-color: white;">
+            <div class="container-fluid">
+                <div class="card border rounded shadow-lg" style="transform: translate(0px,14px);background-color: #fffefe;">
+                    <div class="card-body">
+                        <header class="bg-light border rounded-0 shadow-sm" style="margin-bottom: 1rem;padding: 10px;background-color: #ffffff;">
+                            <h1 class="text-center" style="color: rgb(70,78,108);">Service Categories<br></h1>
+                            <hr>
+                            <p class="text-center"></p>
+                            <div class="form-group"><label>Search for Services</label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend"></div><input class="form-control" type="search" name="query" placeholder="Search " style="height: 50px;width: 500px;">
+                                    <div class="input-group-append"><button class="btn btn-secondary border rounded-0" type="submit" style="background-color: #eac70e;color: rgb(70,74,108);width: 55px;"><i class="fa fa-search" style="width: 25px;height: 18px;"></i></button></div>
+                                </div><small style="margin-left: .4rem;">Search Results:&nbsp;<span style="margin-left: .5rem;color: rgba(0,0,0,0.3);">0</span></small></div>
+                        </header>
+                        <section>
+                            <div class="row is-flex" style="background-color: #ffffff;">
+                                <div class="col-4 col-sm-3 col-md-2">
+                                    <div class="app"><a href="../Potfolios/renders.html?cate=agriculture&amp;type=aquarium-maintenance"><span class="badge badge-primary category-badge" style="background-color: #eac70e;color: rgb(70,74,108);font-size: 9.5px;">Agricultural</span><img class="img-fluid" src="../assets/img/aquarim%20service1.jpg?h=adff38f4fe046859b2dec292bf05f631" style="width: 210px;"><span style="color: rgb(70,74,108);">Aquarium Maintenance</span></a></div>
+                                </div>
+                                <div class="col-4 col-sm-3 col-md-2">
+                                    <div class="app"><a href="services/request.service.html?cate=agriculture&amp;type=irrigation-service"><span class="badge badge-primary category-badge" style="background-color: #eac70e;color: rgb(70,74,108);font-size: 9.5px;">Agricultural</span><img class="img-fluid" src="../assets/img/irrigation%20service.jpeg?h=dc678c690301750e1e4b0bd5cbeebe43"><span style="color: rgb(70,74,108);">Irrigation Service</span></a></div>
+                                </div>
+                                <div class="col-4 col-sm-3 col-md-2">
+                                    <div class="app"><a href="services/request.service.html?cate=agriculture&amp;type=tree-service"><img class="img-fluid" src="../assets/img/tree%20service.bitmoservice.jpg?h=53963a6cb85663ea0a33736cbdd15aa5" width="60" height="60" style="background-color: #ffffff;"><span class="badge badge-primary category-badge" style="background-color: #eac70e;color: #464a6c;font-size: 9.5px;">Agricultural</span><span style="color: rgb(70,74,108);">Tree Service</span></a></div>
+                                </div>
+                                <div class="col-4 col-sm-3 col-md-2">
+                                    <div class="app"><a href="services/request.service.html?cate=agriculture&amp;type=equipment-machinery-equipment-rentals"><span class="badge badge-primary category-badge" style="background-color: #eac70e;color: #464a6c;font-size: 9.5px;">Agricultural</span><img class="img-fluid" src="../assets/img/farm-machinery-rental-service1.bitmoservice.jpg?h=fb1ec925a287b8e8c16274eee9da96a0" width="60" height="60"><span style="color: rgb(70,74,108);">Equipment and Machinery Rentals</span></a></div>
+                                </div>
+                                <div class="col-4 col-sm-3 col-md-2">
+                                    <div class="app"><a href="services/request.service.html?cate=agriculture&amp;type=watering-service"><span class="badge badge-primary category-badge" style="background-color: #eac70e;color: #464a6c;font-size: 9.5px;">Agricutural</span><img class="img-fluid" src="../assets/img/plant-watering-service.bitmoservice.jpg?h=3124c22f4df7e4764dee8b679eb7fd0d" width="60" height="60" style="background-color: #ffffff;"><span style="color: rgb(70,74,108);">Watering Service</span></a></div>
+                                </div>
+                                <div class="col-4 col-sm-3 col-md-2">
+                                    <div class="app"><a href="services/request.service.html?cate=agriculture&amp;type=pest-control-service"><span class="badge badge-primary category-badge" style="color: #464a6c;background-color: #eac70e;font-size: 9.5px;">Agricultural</span><img class="img-fluid" src="../assets/img/pest-control-service.bitmoservice.jpg?h=d1f9e9855f9818cbfdfee9867ca63289" width="60" height="60" style="background-color: #ffffff;"><span style="color: #464a6c;">Pest Control Service</span></a></div>
+                                </div>
+                                <div class="col-4 col-sm-3 col-md-2">
+                                    <div class="app"><a href="services/request.service.html?cate=agriculture&amp;amp;type=storage-service"><span class="badge badge-primary category-badge" style="color: #464a6c;background-color: #eac70e;font-size: 9.5px;">Agricultural</span><img class="img-fluid" src="../assets/img/storage-service.bitmoservice.jpg?h=fe502027583ca422d92b762a9c8e78ef" width="60" height="60" style="background-color: #ffffff;"><span style="color: #464a6c;">Storage Service</span></a></div>
+                                </div>
+                                <div class="col-4 col-sm-3 col-md-2">
+                                    <div class="app"><a href="services/request.service.html?cate=agriculture&amp;amp;type=floral"><span class="badge badge-primary category-badge" style="color: #464a6c;background-color: #eac70e;font-size: 9.5px;">Agricultural</span><img class="img-fluid" src="../assets/img/floral-service.bitmoservice.jpg?h=371bea28f77a59920548e226ff45f2fa" width="60" height="60" style="background-color: #ffffff;"><span style="color: #464a6c;">Floral</span></a></div>
+                                </div>
+                                <div class="col-4 col-sm-3 col-md-2">
+                                    <div class="app"><a href="services/request.service.html?cate=agriculture&amp;amp;type=machinery-operation"><span class="badge badge-primary category-badge" style="background-color: #eac70e;color: #464a6c;font-size: 9.5px;">Agricultural</span><img class="img-fluid" src="../assets/img/agricutural-machinery-operation-service.bitmoservice.jpg?h=2151654876c4d77cce4e167693b2ad26" width="60" height="60" style="background-color: #ffffff;"><span style="color: #464a6c;">Machinery Operation</span></a></div>
+                                </div>
+                                <div class="col-4 col-sm-3 col-md-2">
+                                    <div class="app"><a href="services/request.service.html?cate=agriculture&amp;amp;type=management-service"><span class="badge badge-primary category-badge" style="background-color: #eac70e;color: #464a6c;font-size: 9.5px;">Agricultural</span><img class="img-fluid" src="../assets/img/agricultural_research_and_development_service.bitmoservice.jpg?h=917b5fbc5cc5c88d096118d5758fe8fc" width="60" height="60" style="background-color: #ffffff;"><span style="color: #464a6c;">Research Service</span></a></div>
+                                </div>
+                                <div class="col-4 col-sm-3 col-md-2">
+                                    <div class="app"><a href="services/request.service.html?cate=agriculture&amp;amp;type=poultry-management"><span class="badge badge-primary category-badge" style="background-color: #eac70e;color: #464a6c;font-size: 9.5px;">Agricultural</span><img class="img-fluid" src="../assets/img/poultry-management-service.bitmoservice.jpg?h=ddfda08d8c45586bc622f143c4d3fbd2" width="60" height="60" style="background-color: #ffffff;"><span style="color: #464a6c;">Poultry Management</span></a></div>
+                                </div>
+                                <div class="col-4 col-sm-3 col-md-2">
+                                    <div class="app"><a href="services/request.service.html?cate=agriculture&amp;amp;type=fishery-management"><span class="badge badge-primary category-badge" style="background-color: #eac70e;color: #464a6c;font-size: 9.5px;">Agricultural</span><img class="img-fluid" src="../assets/img/fishery-management-service.bitmoservice.jpg?h=6045fc52154e861bc5924a093abff6c8" width="60" height="60" style="background-color: #ffffff;"><span style="color: #464a6c;">Fishery Management</span></a></div>
+                                </div>
+                                <div class="col-4 col-sm-3 col-md-2">
+                                    <div class="app"><a href="services/request.service.html?cate=agriculture&amp;amp;type=cattle-management"><span class="badge badge-primary category-badge" style="background-color: #eac70e;color: #464a6c;font-size: 9.5px;">Agricultural</span><img class="img-fluid" src="../assets/img/cattle-management-service.bitmoservice.jpg?h=7f789505c195d213d8921b18a3fdba06" width="60" height="60" style="background-color: #ffffff;"><span style="color: #464a6c;">Cattle Management</span></a></div>
+                                </div>
+                                <div class="col-4 col-sm-3 col-md-2">
+                                    <div class="app"><a href="services/request.service.html?cate=agriculture&amp;amp;type=processing-service"><span class="badge badge-primary category-badge" style="background-color: #eac70e;color: #464a6c;font-size: 9.5px;">Agricultural</span><img class="img-fluid" src="../assets/img/agricultural-processing-service.bitmoservice.jpg?h=6ee513da4e1621f56a2fab02040f2cce" width="60" height="60" style="background-color: #ffffff;"><span style="color: #464a6c;">Processing Service</span></a></div>
+                                </div>
+                                <div class="col-4 col-sm-3 col-md-2">
+                                    <div class="app"><a href="services/request.service.html?cate=agriculture&amp;amp;type=crop-service"><span class="badge badge-primary category-badge" style="color: #464a6c;background-color: #eac70e;font-size: 9.5px;">Agricultural</span><img class="img-fluid" src="../assets/img/agricultural-crop-service.bitmoservice.jpg?h=6ad8606162ae72c70730db09074dfca4" width="60" height="60" style="background-color: #ffffff;"><span style="color: #464a6c;">Crop Service</span></a></div>
+                                </div>
+                                <div class="col-4 col-sm-3 col-md-2">
+                                    <div class="app"><a href="services/request.service.html?cate=agriculture&amp;amp;type=soil-preparation"><span class="badge badge-primary category-badge" style="background-color: #eac70e;color: #464a6c;font-size: 9.5px;">Agricultural</span><img class="img-fluid" src="../assets/img/soil-preparation-service.bitmoservice.jpg?h=09415c6191f2d8d59a884b6988cb357e" width="60" height="60" style="background-color: #ffffff;"><span>Soil Preparation</span></a></div>
+                                </div>
+                                <div class="col-4 col-sm-3 col-md-2">
+                                    <div class="app"><a href="services/request.service.html?cate=mentainance&amp;type=system-repires"><span class="badge badge-primary category-badge" style="background-color: #eac70e;color: #464a6c;font-size: 9.5px;">Mentainance</span><img class="img-fluid" src="../assets/img/farm-labour-cmtract-service.bitmoservice.jpg?h=9dcfc9fe633ece1741caa77cd8876019" width="60" height="60" style="background-color: #ffffff;"><span style="color: #464a6c;">Farm Labour Contract Service</span></a></div>
+                                </div>
+                                <div class="col-4 col-sm-3 col-md-2">
+                                    <div class="app"><a href="services/request.service.html?cate=agriculture&amp;amp;type=landscape-service"><span class="badge badge-primary category-badge" style="color: #464a6c;background-color: #eac70e;font-size: 9.5px;">Agicultural</span><img class="img-fluid" src="../assets/img/landscape-service.bitmoservice.jpg?h=9a28e73656e8f31ee2fc54c6b9d33e5a" width="60" height="60" style="background-color: #ffffff;"><span style="color: #464a6c;">Landscape Service</span></a></div>
+                                </div>
+                                <div class="col-4 col-sm-3 col-md-2">
+                                    <div class="app"><a href="services/request.service.html?cate=agriculture&amp;amp;type=delivery-service"><span class="badge badge-primary category-badge" style="color: #464a6c;background-color: #eac70e;font-size: 9.5px;">Agicultural</span><img class="img-fluid" src="../assets/img/farm-produce-delivery-service.bitmoservice.jpg?h=02417af9469fa1d95e30f25a8df0fa23" width="60" height="60" style="background-color: #ffffff;"><span style="color: #464a6c;">Farm Produce Delivery</span></a></div>
+                                </div>
+                                <div class="col-4 col-sm-3 col-md-2">
+                                    <div class="app"><a href="services/request.service.html?cate=agriculture&amp;amp;type=veterinary-service"><span class="badge badge-primary category-badge" style="color: #464a6c;background-color: #eac70e;font-size: 9.5px;">Agicultural</span><img class="img-fluid" src="../assets/img/veterinary-service.bitmoservice.jpg?h=e82ef079d942daed2f7f962d06da041e" width="60" height="60" style="background-color: #ffffff;"><span style="color: #464a6c;">Veterinary Service</span></a></div>
+                                </div>
+                                <div class="col-4 col-sm-3 col-md-2">
+                                    <div class="app"><a href="services/request.service.html?cate=agriculture&amp;amp;type=customer-service"><span class="badge badge-primary category-badge" style="color: #464a6c;background-color: #eac70e;font-size: 9.5px;">Agicultural</span><img class="img-fluid" src="../assets/img/agricultural-customer-service.bitmoservice.jpg?h=cf8c1ce7199a5df069f19c4c15d52970" width="60" height="60" style="background-color: #ffffff;"><span style="color: #464a6c;">Costumer Service</span></a></div>
+                                </div>
+                                <div class="col-4 col-sm-3 col-md-2">
+                                    <div class="app"><a href="services/request.service.html?cate=agriculture&amp;amp;type=crop-planting-and-cultivation"><span class="badge badge-primary category-badge" style="color: #464a6c;background-color: #eac70e;font-size: 9.5px;">Agicultural</span><img class="img-fluid" src="../assets/img/ornamental-shrub-service.bitmoservice.jpg?h=158f13d43c3897f8d5918373586997f9" width="60" height="60" style="background-color: #ffffff;"><span style="color: #464a6c;">Ornamental Shrubbing</span></a></div>
+                                </div>
+                                <div class="col-4 col-sm-3 col-md-2">
+                                    <div class="app"><a href="services/request.service.html?cate=agriculture&amp;amp;type=crop-planting-and-cultivation"><span class="badge badge-primary category-badge" style="color: #464a6c;background-color: #eac70e;font-size: 9.5px;">Agicultural</span><img class="img-fluid" src="../assets/img/plant-cultivation-service.bitmoservice.jpg?h=9561ccaaaea2e70a2245bdd1a028c64c" width="60" height="60" style="background-color: #ffffff;"><span style="color: #464a6c;">Crop Planting and Cultivation</span></a></div>
+                                </div>
+                                <div class="clearfix"></div>
+                                <div class="clearfix"></div>
+                            </div>
+                        </section>
+                        <div class="w-100" style="overflow: hidden;overflow-x: scroll;">
+                            <nav>
+                                <ul class="pagination pagination-lg">
+                                    <li class="page-item"><a class="page-link" aria-label="Previous"><span aria-hidden="true">«</span></a></li>
+                                    <li class="page-item"><a class="page-link" href="request.html?load=A">A</a></li>
+                                    <li class="page-item"><a class="page-link" href="request.html?load=B">B</a></li>
+                                    <li class="page-item"><a class="page-link" href="request.html?load=C">C</a></li>
+                                    <li class="page-item"><a class="page-link" href="request.html?load=D">D</a></li>
+                                    <li class="page-item"><a class="page-link" href="request.html?load=E">E</a></li>
+                                    <li class="page-item"><a class="page-link" href="request.html?load=F">F</a></li>
+                                    <li class="page-item"><a class="page-link" href="request.html?load=G">G</a></li>
+                                    <li class="page-item"><a class="page-link" href="request.html?load=H">H</a></li>
+                                    <li class="page-item"><a class="page-link" href="request.html?load=I">I</a></li>
+                                    <li class="page-item"><a class="page-link" href="request.html?load=J">J</a></li>
+                                    <li class="page-item"><a class="page-link" href="request.html?load=K">K</a></li>
+                                    <li class="page-item"><a class="page-link" href="request.html?load=L">L</a></li>
+                                    <li class="page-item"><a class="page-link" href="request.html?load=M">M</a></li>
+                                    <li class="page-item"><a class="page-link" href="request.html?load=N">N</a></li>
+                                    <li class="page-item"><a class="page-link" href="request.html?load=O">O</a></li>
+                                    <li class="page-item"><a class="page-link" href="request.html?load=P">P</a></li>
+                                    <li class="page-item"><a class="page-link" href="request.html?load=Q">Q</a></li>
+                                    <li class="page-item"><a class="page-link" href="request.html?load=R">R</a></li>
+                                    <li class="page-item"><a class="page-link" href="request.html?load=S">S</a></li>
+                                    <li class="page-item"><a class="page-link" href="request.html?load=T">T</a></li>
+                                    <li class="page-item"><a class="page-link" href="request.html?load=U">U</a></li>
+                                    <li class="page-item"><a class="page-link" href="request.html?load=V">V</a></li>
+                                    <li class="page-item"><a class="page-link" href="request.html?load=W">W</a></li>
+                                    <li class="page-item"><a class="page-link" href="request.html?load=X">X</a></li>
+                                    <li class="page-item"><a class="page-link" href="request.html?load=Y">Y</a></li>
+                                    <li class="page-item"><a class="page-link" href="request.html?load=Z|">Z</a></li>
+                                    <li class="page-item"><a class="page-link" aria-label="Next"><span aria-hidden="true">»</span></a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Start: Footer -->
+        <div class="border-success footer-clean py-4 pl-4" style="margin-top: 10px;">
+            <div class="col">
+                <div class="form-group shadow-lg">
+                    <div class="input-group">
+                        <div class="input-group-prepend"></div>
+                        <div class="input-group-append"></div>
+                    </div>
+                </div>
+            </div>
+            <footer>
+                <div class="row no-gutters justify-content-center">
+                    <!-- Start: Services -->
+                    <div class="col-sm-4 col-md-3 item">
+                        <h3 style="color: #eac70e;">Categories</h3>
+                        <ul>
+                            <li><a href="#">Products</a></li>
+                            <li><a href="#">Service Rendering</a></li>
+                            <li><a href="#">Marketing Unit</a></li>
+                        </ul>
+                    </div>
+                    <!-- End: Services -->
+                    <!-- Start: About -->
+                    <div class="col-sm-4 col-md-3 item">
+                        <h3 style="color: #eac70e;">About</h3>
+                        <ul>
+                            <li><a href="#">Our Story</a></li>
+                            <li><a href="#">Team</a></li>
+                            <li><a href="#">Legacy</a></li>
+                        </ul>
+                    </div>
+                    <!-- End: About -->
+                    <!-- Start: Support -->
+                    <div class="col-sm-4 col-md-3 item">
+                        <h3 style="color: #eac70e;">Support</h3>
+                        <ul>
+                            <li><a href="#">FAQs</a></li>
+                            <li><a href="#">support@bitmoservice.com</a></li>
+                        </ul>
+                    </div>
+                    <!-- End: Support -->
+                    <!-- Start: Support -->
+                    <div class="col-sm-4 col-md-3 item">
+                        <h3 style="color: #eac70e;">Account</h3>
+                        <ul>
+                            <li><a href="../bs_auth/auth_login.html">Login</a></li>
+                            <li><a href="../bs_auth/auth_signup.html">Sign Up</a></li>
+                            <li><a href="../sub/subscription.plans.html">Render a service</a></li>
+                        </ul>
+                    </div>
+                    <!-- End: Support -->
+                </div>
+            </footer>
+            <div class="row no-gutters">
+                <div class="clearfix"></div>
+                <div class="col">
+                    <div align="center"><small class="text-warning"><a href="https://bootstrapstudio.io/releases/app/4.3.7/#">Privacy Policy</a>&nbsp;<span>&nbsp;|</span>&nbsp;&nbsp;<a href="https://bootstrapstudio.io/releases/app/4.3.7/#">Terms &amp; Conditions</a>&nbsp;<span>&nbsp;|</span>&nbsp; Copyright &nbsp;bitmoservice © 2019&nbsp;<br></small></div>
+                </div>
+            </div>
+        </div>
+        <!-- End: Footer -->
+    </main>
+    <script src="../assets/js/jquery.min.js?h=1dd785e1de9a32e236b624ae268bb803"></script>
+    <script src="../assets/bootstrap/js/bootstrap.min.js?h=2394c9ffd5558f411ffdc3326e9a8962"></script>
+    <script src="../assets/js/media/bs.css.min.js?h=f0736a06770d1612f0c146133f78fec5"></script>
+    <script src="../assets/js/media/bs.footer.min.js?h=d353226861fd5e1e6d4994ede49775c7"></script>
+    <script src="../assets/js/media/bs.media.min.js?h=0f798d9f5542535faa525f98afa9266b"></script>
+    <script src="../assets/js/MUSA_product-display.js?h=cd32e2d33a6196668bb291183fd075af"></script>
+    <script src="../assets/js/product.services/sidber.accordion.min.js?h=1a6cc8c1fc8a14e9a04ef4f0c36a6015"></script>
+    <script src="../assets/js/profile.preview.js?h=cfafe20671a6f7907a0ff948d4a82e8e"></script>
+    <script src="../assets/js/rating.sys/rating.sys.min.js?h=2c394aa1685997c37b77172eebac64b9"></script>
+    <script src="../assets/js/request.forms/modal.min.js?h=1c1d14d2f2e444d1d2d40a3ada18a58e"></script>
+    <script src="../assets/js/bs-animation.js?h=98fdbbd86223499341d76166d015c405"></script>
+    <script src="../assets/js/giolocator/locator.min.js?h=73f2f517b6fc915b40dcd4fcb73420af"></script>
+    <script src="../assets/js/modal-dailog/ibox.js?h=1fcbdbae208e2d19ae41700c853516c4"></script>
+    <script src="../assets/js/simplify.request.service.min.js?h=81ca2c2d0cf5ff1b8506e535380990ed"></script>
+</body>
+
+</html>

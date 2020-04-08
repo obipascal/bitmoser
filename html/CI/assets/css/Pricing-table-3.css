@@ -1,0 +1,154 @@
+.primax .pricing-area-1 {
+  background: #000000;
+  text-align: center;
+}
+
+.primax .pricing-area-1:hover .title-1 {
+  background-image: linear-gradient(rgb(6,6,6), rgba(20,255,0,0.65));
+}
+
+.primax .pricing-area-1:hover .price-button-1 .button-1 {
+  color: #fff;
+  background-image: linear-gradient(rgb(0,0,0), rgba(57,255,40,0.65));
+  text-decoration: none;
+}
+
+.primax .pricing-area-1:hover .price-1 {
+  border-color: #000000;
+}
+
+.primax .pricing-area-1:hover .price-1 h1 {
+}
+
+.primax .pricing-area-1:hover .price-1 .before {
+  color: #000000;
+}
+
+.primax .title-area {
+  position: relative;
+}
+
+.primax .title-1 {
+  padding-top: 40px;
+  padding-bottom: 70px;
+  background-image: linear-gradient(rgb(0,0,0), rgb(70,78,108));
+  border-bottom-left-radius: 100px;
+  border-bottom-right-radius: 100px;
+  position: relative;
+  margin-bottom: 125px;
+  -webkit-transition: .5s;
+  -o-transition: .5s;
+  transition: .5s;
+}
+
+.primax .title-1 h1 {
+  font-weight: 600;
+  font-size: 50px;
+  color: #fff;
+}
+
+.primax .price-1 {
+  width: 120px;
+  height: 120px;
+  padding-top: 40px;
+  border: 1px solid #f09911;
+  border-radius: 50%;
+  position: absolute;
+  top: 120px;
+  left: 32%;
+  background-image: linear-gradient(rgb(0,0,0), #f09911);
+  z-index: 1;
+}
+
+.primax .price-1 h1 {
+  font-size: 50px;
+  font-weight: 700;
+  color: #fffefe;
+  line-height: 15px!important;
+}
+
+.primax .price-1 .before {
+  font-size: 15px;
+  text-transform: capitalize;
+  color: #ffffff;
+}
+
+.primax .price-1 .after {
+  font-size: 20px;
+}
+
+.primax .price-button-1 {
+  padding-top: 15px;
+}
+
+.primax .price-body-2 {
+  padding-left: 63px;
+  padding-right: 63px;
+}
+
+.primax .price-body-1 ul li {
+  line-height: 60px;
+  border-bottom: 1px solid #aaaaaa;
+}
+
+.primax .price-body-1 ul li:last-child {
+  border-bottom: none;
+}
+
+.primax .price-button-1 .button-1 {
+  display: block;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  font-size: 32px;
+  background-image: linear-gradient(#f09911, rgb(0,0,0));
+  border-top-left-radius: 80px;
+  border-top-right-radius: 80px;
+  -webkit-transition: .5s;
+  -o-transition: .5s;
+  transition: .5s;
+}
+
+.primax .price-button-1 .button-1:hover {
+  color: #fff;
+  background: #0072bc;
+}
+
+.primax.table-1.section-padding {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.title-1 {
+}
+
+.pricing-area-1 {
+}
+
+.col-lg-4.col-md-6.col-sm-12 {
+  padding-top: 20px;
+}
+
+.primax .price-1:hover {
+  width: 120px;
+  height: 120px;
+  padding-top: 40px;
+  border: 1px solid #39b54a;
+  border-radius: 50%;
+  position: absolute;
+  top: 120px;
+  left: 32%;
+  background-image: linear-gradient(rgb(0,0,0), rgba(57,255,40,0.65));
+  linear-gradient(rgb(0,0,0), rgba(57,255,40,0.65));: 1;
+}
+
+dl, .sub-item-list {
+  color: rgb(255,255,255);
+}
+
+.price-button-1 > a:hover {
+  text-decoration: none;
+}
+
